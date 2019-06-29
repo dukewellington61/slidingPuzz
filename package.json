@@ -12,10 +12,10 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "dev": "parcel src/index.html",
+    "dev": "parcel index.html",
     "start": "./node_modules/parcel-bundler/bin/cli.js src/index.html",
-    "build": "parcel build src/index.html",
-    "heroku-postbuild": "parcel build src/index.html"
+    "build": "parcel build index.html",
+    "heroku-postbuild": "parcel build index.html"
   },
   "eslintConfig": {
     "extends": "react-app"
