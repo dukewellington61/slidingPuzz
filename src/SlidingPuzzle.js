@@ -7,10 +7,15 @@ export const SlidingPuzzle = props => {
   const nought = "*";
 
   const styleSpan = {
-    width: '50px',
-    height: '50px',
+    width: '100px',
+    height: '100px',
     border: 'solid',
-    display: 'inline-block'
+    display: 'table-cell',
+    fontSize: '3em',
+    fontFamily: 'Verdana, Geneva, Tahoma, sans-serif',
+    textAlign: 'center',
+    verticalAlign: 'middle',
+    lineHeight: 'normal'
   };      
 
   const createStartArray = () => {
