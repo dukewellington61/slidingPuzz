@@ -25748,7 +25748,79 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"SlidingPuzzle.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"style.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"SlidingPuzzle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25758,16 +25830,34 @@ exports.SlidingPuzzle = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+require("./style.css");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 const SlidingPuzzle = props => {
-  const level = 4;
-  const nought = "*";
+  const level = 3;
+  const nought = "naught";
   const styleSpan = {
-    width: '50px',
-    height: '50px',
+    width: '100px',
+    height: '100px',
     border: 'solid',
-    display: 'inline-block'
+    borderWidth: '0.2px',
+    borderColor: 'white',
+    display: 'table-cell',
+    fontSize: '3em',
+    fontFamily: 'Verdana, Geneva, Tahoma, sans-serif',
+    textAlign: 'center',
+    verticalAlign: 'middle',
+    lineHeight: 'normal',
+    backgroundColor: 'black',
+    color: 'white'
+  };
+  const naughtStyle = {
+    width: '100px',
+    height: '100px',
+    border: 'none',
+    display: 'table-cell',
+    fontSize: '0'
   };
 
   const createStartArray = () => {
@@ -25907,9 +25997,10 @@ const SlidingPuzzle = props => {
 
     if (noughtTileY == 0) {
       if (puzzleElements[noughtTileY][noughtTileX + 1] == puzzleElements[numberTileY][numberTileX] || puzzleElements[noughtTileY][noughtTileX - 1] == puzzleElements[numberTileY][numberTileX] || puzzleElements[noughtTileY + 1][noughtTileX] == puzzleElements[numberTileY][numberTileX]) {
+        tileSlider(event);
         puzzleElements[noughtTileY][noughtTileX] = puzzleElements[numberTileY][numberTileX];
         puzzleElements[numberTileY][numberTileX] = nought;
-        updateUseStates(puzzleElements);
+        setTimeout(() => updateUseStates(puzzleElements), 500);
       }
 
       ;
@@ -25919,9 +26010,10 @@ const SlidingPuzzle = props => {
 
     if (noughtTileY == level - 1) {
       if (puzzleElements[noughtTileY][noughtTileX + 1] == puzzleElements[numberTileY][numberTileX] || puzzleElements[noughtTileY][noughtTileX - 1] == puzzleElements[numberTileY][numberTileX] || puzzleElements[noughtTileY - 1][noughtTileX] == puzzleElements[numberTileY][numberTileX]) {
+        tileSlider(event);
         puzzleElements[noughtTileY][noughtTileX] = puzzleElements[numberTileY][numberTileX];
         puzzleElements[numberTileY][numberTileX] = nought;
-        updateUseStates(puzzleElements);
+        setTimeout(() => updateUseStates(puzzleElements), 500);
       }
 
       ;
@@ -25931,9 +26023,10 @@ const SlidingPuzzle = props => {
 
     if (noughtTileY != level - 1 && noughtTileY != 0) {
       if (puzzleElements[noughtTileY][noughtTileX + 1] == puzzleElements[numberTileY][numberTileX] || puzzleElements[noughtTileY][noughtTileX - 1] == puzzleElements[numberTileY][numberTileX] || puzzleElements[noughtTileY + 1][noughtTileX] == puzzleElements[numberTileY][numberTileX] || puzzleElements[noughtTileY - 1][noughtTileX] == puzzleElements[numberTileY][numberTileX]) {
+        tileSlider(event);
         puzzleElements[noughtTileY][noughtTileX] = puzzleElements[numberTileY][numberTileX];
         puzzleElements[numberTileY][numberTileX] = nought;
-        updateUseStates(puzzleElements);
+        setTimeout(() => updateUseStates(puzzleElements), 500);
       }
 
       ;
@@ -25942,14 +26035,46 @@ const SlidingPuzzle = props => {
     ;
   };
 
+  const tileSlider = event => {
+    const [noughtTileY, noughtTileX] = findPositionTile(puzzleElements, nought);
+    const [numberTileY, numberTileX] = findPositionTile(puzzleElements, event.target.innerHTML);
+
+    if (numberTileY == noughtTileY - 1) {
+      event.target.classList.add('down');
+    }
+
+    ;
+
+    if (numberTileY == noughtTileY + 1) {
+      event.target.classList.add('up');
+    }
+
+    ;
+
+    if (numberTileX == noughtTileX - 1) {
+      event.target.classList.add('right');
+    }
+
+    ;
+
+    if (numberTileX == noughtTileX + 1) {
+      event.target.classList.add('left');
+    }
+
+    ;
+  };
+
+  let i = 1;
   return _react.default.createElement("div", null, _react.default.createElement("div", null, gameWon == true && "Bravo! Es ist geschafft."), puzzleElements.map((el, indexRow) => _react.default.createElement("div", {
     key: indexRow
   }, el.map((el, index) => _react.default.createElement("div", {
+    id: i++,
     key: index,
     y: indexRow,
     x: index,
-    style: styleSpan,
-    onClick: gameState == true ? swapPositionTiles : undefined
+    onClick: gameState == true ? swapPositionTiles : undefined,
+    className: el,
+    style: el == "naught" ? naughtStyle : styleSpan
   }, el)))), _react.default.createElement("button", {
     key: "button",
     onClick: startGame
@@ -25957,7 +26082,7 @@ const SlidingPuzzle = props => {
 };
 
 exports.SlidingPuzzle = SlidingPuzzle;
-},{"react":"../node_modules/react/index.js"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./style.css":"style.css"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -25969,7 +26094,7 @@ var _SlidingPuzzle = require("./SlidingPuzzle");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom.default.render(_react.default.createElement(_SlidingPuzzle.SlidingPuzzle, null), document.querySelector('#app'));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./SlidingPuzzle":"SlidingPuzzle.js"}],"../../../../../.npm/_npx/4173/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./SlidingPuzzle":"SlidingPuzzle.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -25997,7 +26122,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35429" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35903" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -26172,5 +26297,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../.npm/_npx/4173/lib/node_modules/parcel/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/src.e31bb0bc.js.map

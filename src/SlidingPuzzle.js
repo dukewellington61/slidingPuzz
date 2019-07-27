@@ -1,22 +1,37 @@
 import React, { useState} from "react";
 
+import './style.css';
+
+
 export const SlidingPuzzle = props => {
 
-  const level = 4;
+  const level = 3;
 
-  const nought = "*";
+  const nought = "naught";  
 
   const styleSpan = {
     width: '100px',
     height: '100px',
     border: 'solid',
+    borderWidth: '0.2px',
+    borderColor: 'white',
     display: 'table-cell',
     fontSize: '3em',
     fontFamily: 'Verdana, Geneva, Tahoma, sans-serif',
     textAlign: 'center',
     verticalAlign: 'middle',
-    lineHeight: 'normal'
-  };      
+    lineHeight: 'normal',
+    backgroundColor: 'black',
+    color: 'white'
+  };    
+  
+  const naughtStyle = {
+    width: '100px',
+    height: '100px',
+    border: 'none',
+    display: 'table-cell',
+    fontSize: '0'
+  }
 
   const createStartArray = () => {
     const puzzleArray = new Array(level);  
@@ -29,13 +44,13 @@ export const SlidingPuzzle = props => {
         };            
       };
       return puzzleArray;
-  };  
+  };    
   
   const [puzzleElements, setPuzzleElements] = useState(createStartArray());  
   
   const [gameState, setGameState] = useState(false); 
 
-  const [gameWon, setGameWon] = useState(false); 
+  const [gameWon, setGameWon] = useState(false);   
 
   const updateUseStates = arr => {
     setPuzzleElements([...arr]);
@@ -75,7 +90,7 @@ export const SlidingPuzzle = props => {
           puzzleElements[i1][j1] = temp;   
         };
     };     
-    isSolveAble(puzzleElements) === true ? updateUseStates(puzzleElements) : shuffleArray();
+    isSolveAble(puzzleElements) === true ? updateUseStates(puzzleElements) : shuffleArray();    
   };  
 
   const findPositionTile = (arr,tile) => {
@@ -128,7 +143,7 @@ export const SlidingPuzzle = props => {
     
   const swapPositionTiles = event => {    
     const [noughtTileY,noughtTileX] = findPositionTile(puzzleElements,nought);  
-    const [numberTileY,numberTileX] = findPositionTile(puzzleElements,event.target.innerHTML); 
+    const [numberTileY,numberTileX] = findPositionTile(puzzleElements,event.target.innerHTML);     
         
     if (puzzleElements[noughtTileY][noughtTileX] == puzzleElements[numberTileY][numberTileX]) return;
 
@@ -136,10 +151,13 @@ export const SlidingPuzzle = props => {
       if (puzzleElements[noughtTileY][noughtTileX + 1] == puzzleElements[numberTileY][numberTileX] ||
           puzzleElements[noughtTileY][noughtTileX - 1] == puzzleElements[numberTileY][numberTileX] ||
           puzzleElements[noughtTileY + 1][noughtTileX] == puzzleElements[numberTileY][numberTileX]){
+          
+          tileSlider(event);   
 
           puzzleElements[noughtTileY][noughtTileX] = puzzleElements[numberTileY][numberTileX];
           puzzleElements[numberTileY][numberTileX] = nought; 
-          updateUseStates(puzzleElements);       
+                    
+          setTimeout( () => updateUseStates(puzzleElements), 500);                      
       };
     };
 
@@ -148,9 +166,12 @@ export const SlidingPuzzle = props => {
           puzzleElements[noughtTileY][noughtTileX - 1] == puzzleElements[numberTileY][numberTileX] ||
           puzzleElements[noughtTileY - 1][noughtTileX] == puzzleElements[numberTileY][numberTileX]){
 
+          tileSlider(event);
+
           puzzleElements[noughtTileY][noughtTileX] = puzzleElements[numberTileY][numberTileX];
           puzzleElements[numberTileY][numberTileX] = nought; 
-          updateUseStates(puzzleElements); 
+                     
+          setTimeout( () => updateUseStates(puzzleElements), 500);                   
       };
     };
 
@@ -160,12 +181,39 @@ export const SlidingPuzzle = props => {
           puzzleElements[noughtTileY + 1][noughtTileX] == puzzleElements[numberTileY][numberTileX] ||
           puzzleElements[noughtTileY - 1][noughtTileX] == puzzleElements[numberTileY][numberTileX]){
 
+          tileSlider(event);  
+
           puzzleElements[noughtTileY][noughtTileX] = puzzleElements[numberTileY][numberTileX];
           puzzleElements[numberTileY][numberTileX] = nought; 
-          updateUseStates(puzzleElements); 
+                        
+          setTimeout( () => updateUseStates(puzzleElements), 500);                                         
       };
+    };   
+  };  
+
+  const tileSlider = (event) => {
+
+    const [noughtTileY,noughtTileX] = findPositionTile(puzzleElements,nought);  
+    const [numberTileY,numberTileX] = findPositionTile(puzzleElements,event.target.innerHTML); 
+    
+    if (numberTileY == noughtTileY - 1) {
+      event.target.classList.add('down');        
+    };
+
+    if (numberTileY == noughtTileY + 1) {
+      event.target.classList.add('up');      
+    }; 
+    
+    if (numberTileX == noughtTileX - 1) {
+      event.target.classList.add('right');        
+    };
+
+    if (numberTileX == noughtTileX + 1) {
+      event.target.classList.add('left');        
     };
   };
+
+  let i = 1;
   
     return (    
     <div>
@@ -177,11 +225,15 @@ export const SlidingPuzzle = props => {
     key={indexRow}>
     { el.map((el,index) => 
     <div 
+    id = {i++}
     key = {index} 
     y = {indexRow}   
     x = {index} 
-    style = {styleSpan}
-    onClick = {gameState == true ? swapPositionTiles : undefined}> 
+      
+    onClick = {gameState == true ? swapPositionTiles : undefined}
+    className = {el}
+    style = {el == "naught" ? naughtStyle : styleSpan}  
+    > 
     {el}</div>) }</div>) }  
 
     <button
