@@ -7,10 +7,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.1.1",
     "parcel-bundler": "^1.12.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-shuffle": "^2.1.0",
+    "src": "^1.1.2",
+    "style.css": "^1.0.0"
   },
   "scripts": {
     "start": "npx parcel src/index.html",
