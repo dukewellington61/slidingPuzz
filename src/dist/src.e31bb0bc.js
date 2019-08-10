@@ -25964,7 +25964,8 @@ const SlidingPuzzle = props => {
     zIndex: '1'
   };
   const stylePuzzle = {
-    width: `${level * parseInt(styleSpan.width)}px`
+    width: `${level * parseInt(styleSpan.width)}px`,
+    height: '100%'
   };
   const naughtStyle = {
     width: '150px',
@@ -26033,12 +26034,12 @@ const SlidingPuzzle = props => {
     setGameState(true);
     setGameWon(false);
     shuffleArray();
-    document.querySelector('.puzzleBody').classList.add('blur');
-    setTimeout(() => document.querySelector('.puzzleBody').classList.remove('blur'), 600);
     document.querySelector('.button').classList.add('button-blur');
     setTimeout(() => document.querySelector('.button').classList.remove('button-blur'), 600);
     document.querySelector('.puzzleBody').classList.add('rotate-scale-up');
     setTimeout(() => document.querySelector('.puzzleBody').classList.remove('rotate-scale-up'), 2000);
+    document.querySelector('.puzzleBody').classList.add('blur');
+    setTimeout(() => document.querySelector('.puzzleBody').classList.remove('blur'), 600);
   };
 
   const checkIfGameWon = array => {
@@ -26233,8 +26234,12 @@ const SlidingPuzzle = props => {
 
   const startOrEnd = () => {
     if (gameState == true) {
-      setPuzzleElements(createStartArray());
+      setTimeout(() => setPuzzleElements(createStartArray()), 500);
       setGameState(false);
+      document.querySelector('.puzzleBody').classList.add('slit-out-vertical');
+      setTimeout(() => document.querySelector('.puzzleBody').classList.remove('slit-out-vertical'), 500);
+      setTimeout(() => document.querySelector('.puzzleBody').classList.add('slit-in-vertical'), 500);
+      setTimeout(() => document.querySelector('.puzzleBody').classList.remove('slit-in-vertical'), 1000);
     }
 
     ;
@@ -26251,13 +26256,12 @@ const SlidingPuzzle = props => {
     className: 'puzzle',
     style: stylePuzzle
   }, _react.default.createElement("div", null, gameWon == true && "Bravo! Es ist geschafft."), _react.default.createElement("div", {
-    className: 'row',
-    style: {
-      width: '100%',
-      position: 'absolute'
-    }
+    className: 'row'
   }, _react.default.createElement("div", {
-    className: 'puzzleBody'
+    className: 'puzzleBody',
+    style: {
+      height: '300px'
+    }
   }, puzzleElements.map((el, indexRow) => _react.default.createElement("div", {
     className: 'puzzleRows',
     key: indexRow
@@ -26276,14 +26280,14 @@ const SlidingPuzzle = props => {
     key: "button",
     onClick: startOrEnd
   }, gameState == true ? "stop game" : "start game"), gameState == false ? _react.default.createElement("button", {
-    className: 'button-img',
+    className: 'button button-img btn btn-default',
     key: "button-img",
     onClick: () => {
       imageNumberToggler();
       setPuzzleElements(createStartArray());
     }
   }, image ? 'numbers' : 'image') : undefined, image && gameState == false ? _react.default.createElement("button", {
-    className: 'button-another-img',
+    className: 'button button-another-img btn btn-default',
     key: "button-another-img",
     onClick: () => {
       imageToggler();
@@ -26340,7 +26344,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42225" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37543" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

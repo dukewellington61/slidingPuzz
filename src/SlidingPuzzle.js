@@ -33,7 +33,7 @@ export const SlidingPuzzle = props => {
 
   const level = 3;
 
-  const nought = 'naught';    
+  const nought = 'naught';     
 
   const styleSpan = {
     width: '150px',
@@ -49,11 +49,12 @@ export const SlidingPuzzle = props => {
     color: 'white',
     fontSize: '0',
     zIndex: '1'
-  };    
+  };     
 
   const stylePuzzle = {
-    width: `${level * parseInt(styleSpan.width)}px`
-  }  
+    width: `${level * parseInt(styleSpan.width)}px`,
+    height: '100%'
+  }; 
   
   const naughtStyle = {
     width: '150px',
@@ -62,7 +63,7 @@ export const SlidingPuzzle = props => {
     display: 'table-cell',
     fontSize: '0',
     backgroundColor: 'white'
-  }
+  };
 
   const createStartArray = () => {
     const puzzleArray = new Array(level);  
@@ -119,14 +120,15 @@ export const SlidingPuzzle = props => {
     setGameWon(false);
     shuffleArray();   
 
-    document.querySelector('.puzzleBody').classList.add('blur');
-    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('blur'), 600);
-
     document.querySelector('.button').classList.add('button-blur');
     setTimeout( () => document.querySelector('.button').classList.remove('button-blur'), 600);    
     
     document.querySelector('.puzzleBody').classList.add('rotate-scale-up');       
-    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('rotate-scale-up'), 2000);    
+    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('rotate-scale-up'), 2000);  
+    
+    document.querySelector('.puzzleBody').classList.add('blur');
+    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('blur'), 600);
+
   };
 
   const checkIfGameWon = array => {
@@ -292,8 +294,12 @@ export const SlidingPuzzle = props => {
 
   const startOrEnd = () => {
     if (gameState == true) {
-      setPuzzleElements(createStartArray());
+      setTimeout( () => setPuzzleElements(createStartArray()),500);
       setGameState(false);
+      document.querySelector('.puzzleBody').classList.add('slit-out-vertical');
+      setTimeout( () => document.querySelector('.puzzleBody').classList.remove('slit-out-vertical'), 500);
+      setTimeout( () => document.querySelector('.puzzleBody').classList.add('slit-in-vertical'), 500);
+      setTimeout( () => document.querySelector('.puzzleBody').classList.remove('slit-in-vertical'), 1000);
     };
     
     if (gameState == false) {
@@ -313,11 +319,11 @@ export const SlidingPuzzle = props => {
       <div>{gameWon == true && "Bravo! Es ist geschafft."}</div>
 
       <div 
-      className = {'row'}
-      style = {{width: '100%', position: 'absolute'}}>
+      className = {'row'}>
 
         <div
-        className = {'puzzleBody'}> 
+        className = {'puzzleBody'}
+        style = {{height: '300px'}}> 
         
           { puzzleElements.map((el,indexRow) => 
 
@@ -353,7 +359,7 @@ export const SlidingPuzzle = props => {
           </button>  
 
           { gameState == false ? <button
-          className = {'button-img'}
+          className = {'button button-img btn btn-default'}
           key = 'button-img'
           onClick = {() => {imageNumberToggler(); setPuzzleElements(createStartArray())}}
           >
@@ -361,7 +367,7 @@ export const SlidingPuzzle = props => {
           </button> : undefined }
 
           { image && gameState == false ? <button
-          className = {'button-another-img'}
+          className = {'button button-another-img btn btn-default'}
           key = 'button-another-img'
           onClick = {() => {imageToggler(); setPuzzleElements(createStartArray())}}
           >
