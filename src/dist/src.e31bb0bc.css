@@ -346,6 +346,12 @@
 }
 
 @media (max-width: 1000px) {
+  body{
+    width: 435px;
+  }
+  #app {
+    width: 100%;
+  }
   .row {
     flex-direction: column; 
     height: 400px;
@@ -357,7 +363,8 @@
   }
   .button {
     margin: 20px;
-  }
+  }  
+  
 }
 /*!
  * Bootstrap v4.1.1 (https://getbootstrap.com/)

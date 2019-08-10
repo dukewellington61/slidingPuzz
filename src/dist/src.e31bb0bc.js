@@ -25964,7 +25964,7 @@ const SlidingPuzzle = props => {
     zIndex: '1'
   };
   const stylePuzzle = {
-    width: `${level * parseInt(styleSpan.width)}px`,
+    width: '100%',
     height: '100%'
   };
   const naughtStyle = {
@@ -26344,7 +26344,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37543" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35331" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -52,7 +52,7 @@ export const SlidingPuzzle = props => {
   };     
 
   const stylePuzzle = {
-    width: `${level * parseInt(styleSpan.width)}px`,
+    width: '100%',
     height: '100%'
   }; 
   
