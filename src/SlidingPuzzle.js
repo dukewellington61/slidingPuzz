@@ -52,8 +52,10 @@ export const SlidingPuzzle = props => {
   };     
 
   const stylePuzzle = {
+    position: 'relative',
     width: '100%',
-    height: '100%'
+    height: '100%',
+    left: '0'
   }; 
   
   const naughtStyle = {
@@ -63,6 +65,25 @@ export const SlidingPuzzle = props => {
     display: 'table-cell',
     fontSize: '0',
     backgroundColor: 'white'
+  };
+
+  const messageFieldStyle = {
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    height: '30%',
+    width: '435px',
+    backgroundImage: 'linear-gradient(to right, red , yellow)',
+    opacity: '0.85',
+    color: 'black',
+    zIndex: '1',
+    fontFamily: 'sans-serif',
+    fontSize: '1.25em',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center'       
   };
 
   const createStartArray = () => {
@@ -78,58 +99,36 @@ export const SlidingPuzzle = props => {
       return puzzleArray;
   };    
 
+
+  const [puzzleElements, setPuzzleElements] = useState(createStartArray());  
+
+  const [gameState, setGameState] = useState(false); 
+
+  const [gameHasBeenStartedBefore, setGameHasBeenStartedBefore] = useState(false);
+
+  const [gameWon, setGameWon] = useState(false);  
+
   const [image, setImage] = useState(false);
 
   const [whichImage, setWhichImage] = useState(imgArrayFlat1);
   
-  const [puzzleElements, setPuzzleElements] = useState(createStartArray());  
   
-  const [gameState, setGameState] = useState(false); 
-
-  const [gameWon, setGameWon] = useState(false);   
-  
-
-  const imageNumberToggler = () => {
-    image == true ? setTimeout( () => setImage(false), 500) : setTimeout( () => setImage(true), 500);
-    document.querySelector('.puzzleBody').classList.add('fadeOut');
-    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('fadeOut'), 500);
-    setTimeout( () => document.querySelector('.puzzleBody').classList.add('fadeIn'), 500);
-    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('fadeIn'), 1000);
-  };
-
-  const imageToggler = () => {
-    if (whichImage == imgArrayFlat1) setTimeout( () => setWhichImage(imgArrayFlat2), 500);   
-    if (whichImage == imgArrayFlat2) setTimeout( () => setWhichImage(imgArrayFlat3), 500);  
-    if (whichImage == imgArrayFlat3) setTimeout( () => setWhichImage(imgArrayFlat1), 500);   
-    document.querySelector('.puzzleBody').classList.add('fadeOut');
-    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('fadeOut'), 500);
-    setTimeout( () => document.querySelector('.puzzleBody').classList.add('fadeIn'), 500);
-    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('fadeIn'), 1000);    
-  };
-
   const updateUseStates = arr => {
     setPuzzleElements([...arr]);
-    if (checkIfGameWon(arr) == true) {
+    if (checkIfGameWon(arr) == true) {        
         setGameState(false);
         setGameWon(true);
+        displayWinMessage();
     };
   };
 
   const startGame = () => {
+    setGameHasBeenStartedBefore(true);
     setGameState(true);
     setGameWon(false);
-    shuffleArray();   
-
-    document.querySelector('.button').classList.add('button-blur');
-    setTimeout( () => document.querySelector('.button').classList.remove('button-blur'), 600);    
-    
-    document.querySelector('.puzzleBody').classList.add('rotate-scale-up');       
-    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('rotate-scale-up'), 2000);  
-    
-    document.querySelector('.puzzleBody').classList.add('blur');
-    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('blur'), 600);
-
-  };
+    shuffleArray();  
+    startGameAnimation();
+  };  
 
   const checkIfGameWon = array => {
     const endArray = array.flat([level - 1]);
@@ -277,11 +276,42 @@ export const SlidingPuzzle = props => {
     if (numberTileX == noughtTileX + 1) {
       event.target.classList.add('left');        
     };
+  };  
+
+  const startGameAnimation = () => {
+    document.querySelector('.button').classList.add('button-blur');
+    setTimeout( () => document.querySelector('.button').classList.remove('button-blur'), 600);
+    
+    document.querySelector('.puzzleBody').classList.add('rotate-scale-up');       
+    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('rotate-scale-up'), 2000);  
+    
+    document.querySelector('.puzzleBody').classList.add('blur');
+    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('blur'), 600);
+  };
+
+  const toggleImageNumber = () => {
+    image == true ? setTimeout( () => setImage(false), 500) : setTimeout( () => setImage(true), 500);   
+    fadeImage();
+    if (gameHasBeenStartedBefore) removeMessageField();
   };
 
   const displayImage = (el) => {
     if (image) return <img src = {whichImage[el]} style = {el != "naught" ? {height: '100%', width: '100%', zIndex: '-1', position: 'relative'} : {display: 'none'}}/>;
   };
+
+  const toggleImage = () => {
+    if (whichImage == imgArrayFlat1) setTimeout( () => setWhichImage(imgArrayFlat2), 500);   
+    if (whichImage == imgArrayFlat2) setTimeout( () => setWhichImage(imgArrayFlat3), 500);  
+    if (whichImage == imgArrayFlat3) setTimeout( () => setWhichImage(imgArrayFlat1), 500);   
+    fadeImage(); 
+  };
+
+  const fadeImage = () => {
+    document.querySelector('.puzzleBody').classList.add('fadeOut');
+    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('fadeOut'), 500);
+    setTimeout( () => document.querySelector('.puzzleBody').classList.add('fadeIn'), 500);
+    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('fadeIn'), 1000);
+  };  
 
   const numberOrTileStyle = () => {
     if (image) return styleSpan;
@@ -292,98 +322,121 @@ export const SlidingPuzzle = props => {
     };
   };
 
-  const startOrEnd = () => {
+  const startOrEnd = () => {  
+    removeMessageField();
     if (gameState == true) {
       setTimeout( () => setPuzzleElements(createStartArray()),500);
       setGameState(false);
-      document.querySelector('.puzzleBody').classList.add('slit-out-vertical');
-      setTimeout( () => document.querySelector('.puzzleBody').classList.remove('slit-out-vertical'), 500);
-      setTimeout( () => document.querySelector('.puzzleBody').classList.add('slit-in-vertical'), 500);
-      setTimeout( () => document.querySelector('.puzzleBody').classList.remove('slit-in-vertical'), 1000);
+      stopGameAnimation();
     };
     
     if (gameState == false) {
-      startGame();
+      startGame();       
     };
   };
 
-  let i = 1;
+  const removeMessageField = () => {
+    document.querySelector('.messageField').classList.add('fadeOut');
+    setTimeout( () => document.querySelector('.messageField').classList.add('message-field-display-none'), 500);
+  };
+
+  const stopGameAnimation = () => {
+    document.querySelector('.puzzleBody').classList.add('slit-out-vertical');
+    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('slit-out-vertical'), 500);
+    setTimeout( () => document.querySelector('.puzzleBody').classList.add('slit-in-vertical'), 500);
+    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('slit-in-vertical'), 1000);
+  };
+
+  const fadeMessageField = () => {
+    if (gameHasBeenStartedBefore == false) {
+      document.querySelector('.messageField').classList.add('fadeOut');
+      setTimeout( () => document.querySelector('.messageField').classList.remove('fadeOut'), 500);
+      setTimeout( () => document.querySelector('.messageField').classList.add('fadeIn'), 500);
+      setTimeout( () => document.querySelector('.messageField').classList.remove('fadeIn'), 1000); 
+    };   
+  };
+
+  const displayWinMessage = () => {
+    document.querySelector('.messageField').classList.remove('message-field-display-none');
+    document.querySelector('.messageField').classList.remove('fadeOut');
+  }
+
+  let tileID = 1;
   
     return (    
 
-    <div
-    className = {'puzzle'}
-    style = {stylePuzzle}
-    >
-
-      <div>{gameWon == true && "Bravo! Es ist geschafft."}</div>
-
-      <div 
-      className = {'row'}>
+      <div
+      className = {'puzzle'}
+      style = {stylePuzzle}
+      >
 
         <div
-        className = {'puzzleBody'}
-        style = {{height: '300px'}}> 
-        
-          { puzzleElements.map((el,indexRow) => 
+        className = {'messageField'}
+        style = {messageFieldStyle}>        
+          {gameWon == false && gameHasBeenStartedBefore == false && <div className = {'message-text'}><p>Hit the -start game- button</p> <p>and put those tiles back in the correct order</p></div>}
+          {gameWon == true && <p>Incredible! You did it!</p>}
+        </div>     
 
-            <div 
-            className = {'puzzleRows'}
-            key={indexRow}>
-            { el.map((el,index) => 
+        <div 
+        className = {'row'}>
+
+          <div
+          className = {'puzzleBody'}
+          style = {{height: '300px'}}> 
+          
+            { puzzleElements.map((el,indexRow) => 
 
               <div 
-              id = {i++}
-              key = {index} 
-              y = {indexRow}   
-              x = {index}         
-              onClick = {gameState == true ? swapPositionTiles : undefined}
-              className = {el}
-              style = {el == "naught" ? naughtStyle : numberOrTileStyle()}>{el}
-              {displayImage(el)}
-              </div>) }
-              
-            </div>) }  
+              className = {'puzzleRows'}
+              key={indexRow}>
+              { el.map((el,index) => 
+
+                <div 
+                id = {tileID++}
+                key = {index} 
+                y = {indexRow}   
+                x = {index}         
+                onClick = {gameState == true ? swapPositionTiles : undefined}
+                className = {el}
+                style = {el == "naught" ? naughtStyle : numberOrTileStyle()}>{el}
+                {displayImage(el)}
+                </div>) }
+                
+              </div>) }  
+
+          </div>
+
+          <div
+          className = {'control-panel'}>
+
+            <button
+            className = {'button btn btn-primary'}
+            key = 'button'
+            onClick = {startOrEnd}
+            >
+              {gameState == true ? "stop game" : "start game"}
+            </button>  
+
+            { gameState == false ? <button
+            className = {'button button-img btn btn-default'}
+            key = 'button-img'
+            onClick = {() => {toggleImageNumber(); setPuzzleElements(createStartArray()); fadeMessageField()}}
+            >
+              {image ? 'numbers' : 'image'} 
+            </button> : undefined }
+
+            { image && gameState == false ? <button
+            className = {'button button-another-img btn btn-default'}
+            key = 'button-another-img'
+            onClick = {() => {toggleImage(); setPuzzleElements(createStartArray()); fadeMessageField()}}
+            >
+              another image 
+            </button> : undefined }
+
+          </div>
 
         </div>
-
-        <div
-        className = {'control-panel'}>
-
-          <button
-          className = {'button btn btn-primary'}
-          key = 'button'
-          onClick = {startOrEnd}
-          >
-            {gameState == true ? "stop game" : "start game"}
-          </button>  
-
-          { gameState == false ? <button
-          className = {'button button-img btn btn-default'}
-          key = 'button-img'
-          onClick = {() => {imageNumberToggler(); setPuzzleElements(createStartArray())}}
-          >
-            {image ? 'numbers' : 'image'} 
-          </button> : undefined }
-
-          { image && gameState == false ? <button
-          className = {'button button-another-img btn btn-default'}
-          key = 'button-another-img'
-          onClick = {() => {imageToggler(); setPuzzleElements(createStartArray())}}
-          >
-            another image 
-          </button> : undefined }
-
-        </div>
-      </div>
-    
-    </div>   
-    
-    )
-  
-
-  
-
-  
-  
+      
+      </div>     
+    )  
 };

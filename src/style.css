@@ -1,5 +1,7 @@
 #app {
+  position: relative;
   height: 300px;
+  top: 20px;
 }
 
 .down {
@@ -347,7 +349,7 @@
 
 @media (max-width: 1000px) {
   body{
-    width: 435px;
+    width: 450px;
   }
   #app {
     width: 100%;
@@ -366,3 +368,13 @@
   }  
   
 }
+
+.message-field-display-none {
+  display: none !important;  
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0 !important;
+}
+
