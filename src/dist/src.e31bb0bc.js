@@ -25974,15 +25974,14 @@ const SlidingPuzzle = props => {
     height: '100px',
     border: 'none',
     display: 'table-cell',
-    fontSize: '0',
-    backgroundColor: 'white'
+    fontSize: '0'
   };
   const messageFieldStyle = {
     position: 'absolute',
     top: '50%',
     transform: 'translateY(-50%)',
     height: '30%',
-    width: '435px',
+    width: '450px',
     backgroundImage: 'linear-gradient(to right, red , yellow)',
     opacity: '0.85',
     color: 'black',
@@ -26312,18 +26311,17 @@ const SlidingPuzzle = props => {
     className: 'puzzle',
     style: stylePuzzle
   }, _react.default.createElement("div", {
+    className: 'row'
+  }, _react.default.createElement("div", {
+    className: 'wrapper'
+  }, _react.default.createElement("div", {
+    className: 'puzzleBody'
+  }, _react.default.createElement("div", {
     className: 'messageField',
     style: messageFieldStyle
   }, gameWon == false && gameHasBeenStartedBefore == false && _react.default.createElement("div", {
     className: 'message-text'
-  }, _react.default.createElement("p", null, "Hit the -start game- button"), " ", _react.default.createElement("p", null, "and put those tiles back in the correct order")), gameWon == true && _react.default.createElement("p", null, "Incredible! You did it!")), _react.default.createElement("div", {
-    className: 'row'
-  }, _react.default.createElement("div", {
-    className: 'puzzleBody',
-    style: {
-      height: '300px'
-    }
-  }, puzzleElements.map((el, indexRow) => _react.default.createElement("div", {
+  }, _react.default.createElement("p", null, "Hit the -start game- button"), " ", _react.default.createElement("p", null, "and put those tiles back in the correct order")), gameWon == true && _react.default.createElement("p", null, "Incredible! You did it!")), puzzleElements.map((el, indexRow) => _react.default.createElement("div", {
     className: 'puzzleRows',
     key: indexRow
   }, el.map((el, index) => _react.default.createElement("div", {
@@ -26356,7 +26354,7 @@ const SlidingPuzzle = props => {
       setPuzzleElements(createStartArray());
       fadeMessageField();
     }
-  }, "another image") : undefined)));
+  }, "another image") : undefined))));
 };
 
 exports.SlidingPuzzle = SlidingPuzzle;
@@ -26407,7 +26405,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38691" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33561" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

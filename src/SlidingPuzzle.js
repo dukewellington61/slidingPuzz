@@ -64,15 +64,14 @@ export const SlidingPuzzle = props => {
     border: 'none',
     display: 'table-cell',
     fontSize: '0',
-    backgroundColor: 'white'
   };
 
   const messageFieldStyle = {
     position: 'absolute',
-    top: '50%',
+    top: '50%',    
     transform: 'translateY(-50%)',
     height: '30%',
-    width: '435px',
+    width: '450px',
     backgroundImage: 'linear-gradient(to right, red , yellow)',
     opacity: '0.85',
     color: 'black',
@@ -368,72 +367,77 @@ export const SlidingPuzzle = props => {
       <div
       className = {'puzzle'}
       style = {stylePuzzle}
-      >
-
-        <div
-        className = {'messageField'}
-        style = {messageFieldStyle}>        
-          {gameWon == false && gameHasBeenStartedBefore == false && <div className = {'message-text'}><p>Hit the -start game- button</p> <p>and put those tiles back in the correct order</p></div>}
-          {gameWon == true && <p>Incredible! You did it!</p>}
-        </div>     
-
-        <div 
-        className = {'row'}>
-
-          <div
-          className = {'puzzleBody'}
-          style = {{height: '300px'}}> 
+      >        
           
-            { puzzleElements.map((el,indexRow) => 
 
-              <div 
-              className = {'puzzleRows'}
-              key={indexRow}>
-              { el.map((el,index) => 
+          <div 
+          className = {'row'}>
 
-                <div 
-                id = {tileID++}
-                key = {index} 
-                y = {indexRow}   
-                x = {index}         
-                onClick = {gameState == true ? swapPositionTiles : undefined}
-                className = {el}
-                style = {el == "naught" ? naughtStyle : numberOrTileStyle()}>{el}
-                {displayImage(el)}
-                </div>) }
-                
-              </div>) }  
+            <div
+            className = {'wrapper'}>
 
-          </div>
+              <div
+              className = {'puzzleBody'}> 
 
-          <div
-          className = {'control-panel'}>
+                <div
+                  className = {'messageField'}
+                  style = {messageFieldStyle}>        
+                  {gameWon == false && gameHasBeenStartedBefore == false && <div className = {'message-text'}><p>Hit the -start game- button</p> <p>and put those tiles back in the correct order</p></div>}
+                  {gameWon == true && <p>Incredible! You did it!</p>}
+                </div>     
+              
+                { puzzleElements.map((el,indexRow) => 
 
-            <button
-            className = {'button btn btn-primary'}
-            key = 'button'
-            onClick = {startOrEnd}
-            >
-              {gameState == true ? "stop game" : "start game"}
-            </button>  
+                  <div 
+                  className = {'puzzleRows'}
+                  key={indexRow}>
+                  { el.map((el,index) => 
 
-            { gameState == false ? <button
-            className = {'button button-img btn btn-default'}
-            key = 'button-img'
-            onClick = {() => {toggleImageNumber(); setPuzzleElements(createStartArray()); fadeMessageField()}}
-            >
-              {image ? 'numbers' : 'image'} 
-            </button> : undefined }
+                    <div 
+                    id = {tileID++}
+                    key = {index} 
+                    y = {indexRow}   
+                    x = {index}         
+                    onClick = {gameState == true ? swapPositionTiles : undefined}
+                    className = {el}
+                    style = {el == "naught" ? naughtStyle : numberOrTileStyle()}>{el}
+                    {displayImage(el)}
+                    </div>) }
+                    
+                  </div>) }  
 
-            { image && gameState == false ? <button
-            className = {'button button-another-img btn btn-default'}
-            key = 'button-another-img'
-            onClick = {() => {toggleImage(); setPuzzleElements(createStartArray()); fadeMessageField()}}
-            >
-              another image 
-            </button> : undefined }
+              </div>
 
-          </div>
+              <div
+              className = {'control-panel'}>
+
+                <button
+                className = {'button btn btn-primary'}
+                key = 'button'
+                onClick = {startOrEnd}
+                >
+                  {gameState == true ? "stop game" : "start game"}
+                </button>  
+
+                { gameState == false ? <button
+                className = {'button button-img btn btn-default'}
+                key = 'button-img'
+                onClick = {() => {toggleImageNumber(); setPuzzleElements(createStartArray()); fadeMessageField()}}
+                >
+                  {image ? 'numbers' : 'image'} 
+                </button> : undefined }
+
+                { image && gameState == false ? <button
+                className = {'button button-another-img btn btn-default'}
+                key = 'button-another-img'
+                onClick = {() => {toggleImage(); setPuzzleElements(createStartArray()); fadeMessageField()}}
+                >
+                  another image 
+                </button> : undefined }
+
+              </div>
+
+            </div>
 
         </div>
       
