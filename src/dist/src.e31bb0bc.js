@@ -25820,38 +25820,35 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"img1/superhero-10.png":[function(require,module,exports) {
-module.exports = "/superhero-10.44b371a4.png";
-},{}],"img1/superhero-2.png":[function(require,module,exports) {
-module.exports = "/superhero-2.4594238e.png";
-},{}],"img1/superhero-3.png":[function(require,module,exports) {
-module.exports = "/superhero-3.7152a332.png";
-},{}],"img1/superhero-4.png":[function(require,module,exports) {
-module.exports = "/superhero-4.aa73fba2.png";
-},{}],"img1/superhero-5.png":[function(require,module,exports) {
-module.exports = "/superhero-5.daec51b8.png";
-},{}],"img1/superhero-6.png":[function(require,module,exports) {
-module.exports = "/superhero-6.a55bb854.png";
-},{}],"img1/superhero-7.png":[function(require,module,exports) {
-module.exports = "/superhero-7.00a68f35.png";
-},{}],"img1/superhero-8.png":[function(require,module,exports) {
-module.exports = "/superhero-8.4740cf77.png";
-},{}],"img1/superhero-9.png":[function(require,module,exports) {
-module.exports = "/superhero-9.ba597650.png";
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"img1/1-superhero-1.png":[function(require,module,exports) {
+module.exports = "/1-superhero-1.091943ff.png";
+},{}],"img1/2-superhero-2.png":[function(require,module,exports) {
+module.exports = "/2-superhero-2.1d7d48c2.png";
+},{}],"img1/3-superhero-3.png":[function(require,module,exports) {
+module.exports = "/3-superhero-3.723546a7.png";
+},{}],"img1/4-superhero-4.png":[function(require,module,exports) {
+module.exports = "/4-superhero-4.e81808c4.png";
+},{}],"img1/5-superhero-5.png":[function(require,module,exports) {
+module.exports = "/5-superhero-5.75a353f6.png";
+},{}],"img1/6-superhero-6.png":[function(require,module,exports) {
+module.exports = "/6-superhero-6.6a123465.png";
+},{}],"img1/7-superhero-7.png":[function(require,module,exports) {
+module.exports = "/7-superhero-7.20d86cd9.png";
+},{}],"img1/8-superhero-8.png":[function(require,module,exports) {
+module.exports = "/8-superhero-8.55dd39d2.png";
 },{}],"img1/*.png":[function(require,module,exports) {
 module.exports = {
-  "superhero-10": require("./superhero-10.png"),
-  "superhero-2": require("./superhero-2.png"),
-  "superhero-3": require("./superhero-3.png"),
-  "superhero-4": require("./superhero-4.png"),
-  "superhero-5": require("./superhero-5.png"),
-  "superhero-6": require("./superhero-6.png"),
-  "superhero-7": require("./superhero-7.png"),
-  "superhero-8": require("./superhero-8.png"),
-  "superhero-9": require("./superhero-9.png")
+  "1-superhero-1": require("./1-superhero-1.png"),
+  "2-superhero-2": require("./2-superhero-2.png"),
+  "3-superhero-3": require("./3-superhero-3.png"),
+  "4-superhero-4": require("./4-superhero-4.png"),
+  "5-superhero-5": require("./5-superhero-5.png"),
+  "6-superhero-6": require("./6-superhero-6.png"),
+  "7-superhero-7": require("./7-superhero-7.png"),
+  "8-superhero-8": require("./8-superhero-8.png")
 };
-},{"./superhero-10.png":"img1/superhero-10.png","./superhero-2.png":"img1/superhero-2.png","./superhero-3.png":"img1/superhero-3.png","./superhero-4.png":"img1/superhero-4.png","./superhero-5.png":"img1/superhero-5.png","./superhero-6.png":"img1/superhero-6.png","./superhero-7.png":"img1/superhero-7.png","./superhero-8.png":"img1/superhero-8.png","./superhero-9.png":"img1/superhero-9.png"}],"img2/react-10.png":[function(require,module,exports) {
-module.exports = "/react-10.a3988fb7.png";
+},{"./1-superhero-1.png":"img1/1-superhero-1.png","./2-superhero-2.png":"img1/2-superhero-2.png","./3-superhero-3.png":"img1/3-superhero-3.png","./4-superhero-4.png":"img1/4-superhero-4.png","./5-superhero-5.png":"img1/5-superhero-5.png","./6-superhero-6.png":"img1/6-superhero-6.png","./7-superhero-7.png":"img1/7-superhero-7.png","./8-superhero-8.png":"img1/8-superhero-8.png"}],"img2/react-1.png":[function(require,module,exports) {
+module.exports = "/react-1.2fe694ec.png";
 },{}],"img2/react-2.png":[function(require,module,exports) {
 module.exports = "/react-2.1d84e922.png";
 },{}],"img2/react-3.png":[function(require,module,exports) {
@@ -25866,22 +25863,19 @@ module.exports = "/react-6.49f8d811.png";
 module.exports = "/react-7.e0ec587b.png";
 },{}],"img2/react-8.png":[function(require,module,exports) {
 module.exports = "/react-8.979a8efa.png";
-},{}],"img2/react-9.png":[function(require,module,exports) {
-module.exports = "/react-9.5f95deea.png";
 },{}],"img2/*.png":[function(require,module,exports) {
 module.exports = {
-  "react-10": require("./react-10.png"),
+  "react-1": require("./react-1.png"),
   "react-2": require("./react-2.png"),
   "react-3": require("./react-3.png"),
   "react-4": require("./react-4.png"),
   "react-5": require("./react-5.png"),
   "react-6": require("./react-6.png"),
   "react-7": require("./react-7.png"),
-  "react-8": require("./react-8.png"),
-  "react-9": require("./react-9.png")
+  "react-8": require("./react-8.png")
 };
-},{"./react-10.png":"img2/react-10.png","./react-2.png":"img2/react-2.png","./react-3.png":"img2/react-3.png","./react-4.png":"img2/react-4.png","./react-5.png":"img2/react-5.png","./react-6.png":"img2/react-6.png","./react-7.png":"img2/react-7.png","./react-8.png":"img2/react-8.png","./react-9.png":"img2/react-9.png"}],"img3/stone-face-10.png":[function(require,module,exports) {
-module.exports = "/stone-face-10.b002f6be.png";
+},{"./react-1.png":"img2/react-1.png","./react-2.png":"img2/react-2.png","./react-3.png":"img2/react-3.png","./react-4.png":"img2/react-4.png","./react-5.png":"img2/react-5.png","./react-6.png":"img2/react-6.png","./react-7.png":"img2/react-7.png","./react-8.png":"img2/react-8.png"}],"img3/stone-face-1.png":[function(require,module,exports) {
+module.exports = "/stone-face-1.cfce6d1c.png";
 },{}],"img3/stone-face-2.png":[function(require,module,exports) {
 module.exports = "/stone-face-2.f471f2fe.png";
 },{}],"img3/stone-face-3.png":[function(require,module,exports) {
@@ -25896,21 +25890,18 @@ module.exports = "/stone-face-6.fb1e5b42.png";
 module.exports = "/stone-face-7.fb10670b.png";
 },{}],"img3/stone-face-8.png":[function(require,module,exports) {
 module.exports = "/stone-face-8.a11a28ef.png";
-},{}],"img3/stone-face-9.png":[function(require,module,exports) {
-module.exports = "/stone-face-9.23e21a86.png";
 },{}],"img3/*.png":[function(require,module,exports) {
 module.exports = {
-  "stone-face-10": require("./stone-face-10.png"),
+  "stone-face-1": require("./stone-face-1.png"),
   "stone-face-2": require("./stone-face-2.png"),
   "stone-face-3": require("./stone-face-3.png"),
   "stone-face-4": require("./stone-face-4.png"),
   "stone-face-5": require("./stone-face-5.png"),
   "stone-face-6": require("./stone-face-6.png"),
   "stone-face-7": require("./stone-face-7.png"),
-  "stone-face-8": require("./stone-face-8.png"),
-  "stone-face-9": require("./stone-face-9.png")
+  "stone-face-8": require("./stone-face-8.png")
 };
-},{"./stone-face-10.png":"img3/stone-face-10.png","./stone-face-2.png":"img3/stone-face-2.png","./stone-face-3.png":"img3/stone-face-3.png","./stone-face-4.png":"img3/stone-face-4.png","./stone-face-5.png":"img3/stone-face-5.png","./stone-face-6.png":"img3/stone-face-6.png","./stone-face-7.png":"img3/stone-face-7.png","./stone-face-8.png":"img3/stone-face-8.png","./stone-face-9.png":"img3/stone-face-9.png"}],"SlidingPuzzle.js":[function(require,module,exports) {
+},{"./stone-face-1.png":"img3/stone-face-1.png","./stone-face-2.png":"img3/stone-face-2.png","./stone-face-3.png":"img3/stone-face-3.png","./stone-face-4.png":"img3/stone-face-4.png","./stone-face-5.png":"img3/stone-face-5.png","./stone-face-6.png":"img3/stone-face-6.png","./stone-face-7.png":"img3/stone-face-7.png","./stone-face-8.png":"img3/stone-face-8.png"}],"SlidingPuzzle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25932,25 +25923,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
-let imgArray1 = Object.keys(_.default).map(function (key) {
-  return [_.default[key]];
-});
-let imgArrayFlat1 = imgArray1.flat(1);
-let imgArray2 = Object.keys(_2.default).map(function (key) {
-  return [_2.default[key]];
-});
-let imgArrayFlat2 = imgArray2.flat(1);
-let imgArray3 = Object.keys(_3.default).map(function (key) {
-  return [_3.default[key]];
-});
-let imgArrayFlat3 = imgArray3.flat(1);
+const createImageArray = obj => {
+  let imgArray = Object.keys(obj).map(function (key) {
+    return [obj[key]];
+  });
+  imgArray.sort((a, b) => {
+    if (a[0] < b[0]) return -1;
+    if (a[0] > b[0]) return 1;
+    return 0;
+  });
+  return imgArray;
+};
 
 const SlidingPuzzle = props => {
   const level = 3;
   const nought = 'naught';
   const styleSpan = {
-    width: '150px',
-    height: '100px',
+    width: '300px',
+    height: '200px',
     border: 'solid',
     borderWidth: '0.2px',
     borderColor: 'grey',
@@ -25970,8 +25960,8 @@ const SlidingPuzzle = props => {
     left: '0'
   };
   const naughtStyle = {
-    width: '150px',
-    height: '100px',
+    width: '300px',
+    height: '200px',
     border: 'none',
     display: 'table-cell',
     fontSize: '0'
@@ -25981,7 +25971,7 @@ const SlidingPuzzle = props => {
     top: '50%',
     transform: 'translateY(-50%)',
     height: '30%',
-    width: '450px',
+    width: '900px',
     backgroundImage: 'linear-gradient(to right, red , yellow)',
     opacity: '0.85',
     color: 'black',
@@ -26019,7 +26009,7 @@ const SlidingPuzzle = props => {
   const [gameHasBeenStartedBefore, setGameHasBeenStartedBefore] = (0, _react.useState)(false);
   const [gameWon, setGameWon] = (0, _react.useState)(false);
   const [image, setImage] = (0, _react.useState)(false);
-  const [whichImage, setWhichImage] = (0, _react.useState)(imgArrayFlat1);
+  const [whichImage, setWhichImage] = (0, _react.useState)(createImageArray(_.default));
 
   const updateUseStates = arr => {
     setPuzzleElements([...arr]);
@@ -26222,7 +26212,7 @@ const SlidingPuzzle = props => {
 
   const displayImage = el => {
     if (image) return _react.default.createElement("img", {
-      src: whichImage[el],
+      src: whichImage[el - 1],
       style: el != "naught" ? {
         height: '100%',
         width: '100%',
@@ -26235,9 +26225,9 @@ const SlidingPuzzle = props => {
   };
 
   const toggleImage = () => {
-    if (whichImage == imgArrayFlat1) setTimeout(() => setWhichImage(imgArrayFlat2), 500);
-    if (whichImage == imgArrayFlat2) setTimeout(() => setWhichImage(imgArrayFlat3), 500);
-    if (whichImage == imgArrayFlat3) setTimeout(() => setWhichImage(imgArrayFlat1), 500);
+    if (JSON.stringify(whichImage).includes('superhero')) setTimeout(() => setWhichImage(createImageArray(_2.default)), 500);
+    if (JSON.stringify(whichImage).includes('react')) setTimeout(() => setWhichImage(createImageArray(_3.default)), 500);
+    if (JSON.stringify(whichImage).includes('stone-face')) setTimeout(() => setWhichImage(createImageArray(_.default)), 500);
     fadeImage();
   };
 
@@ -26405,7 +26395,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40279" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38171" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

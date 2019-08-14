@@ -4,7 +4,7 @@ body {
 
 #app {
   position: relative;
-  height: 500px;
+  height: 800px;
   /* top: 20px; */
   background-color:rgba(0, 0, 0, 0) !important;  
 }

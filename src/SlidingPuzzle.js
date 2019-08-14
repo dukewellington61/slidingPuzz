@@ -4,29 +4,24 @@ import './style.css';
 
 import imgObj1 from '../src/img1/*.png';
 
-let imgArray1 = Object.keys(imgObj1).map(function(key) {
-  return [imgObj1[key]];
-});
-
-let imgArrayFlat1 = imgArray1.flat(1);
-
-
 import imgObj2 from '../src/img2/*.png';
-
-let imgArray2 = Object.keys(imgObj2).map(function(key) {
-  return [imgObj2[key]];
-});
-
-let imgArrayFlat2 = imgArray2.flat(1);
-
 
 import imgObj3 from '../src/img3/*.png';
 
-let imgArray3 = Object.keys(imgObj3).map(function(key) {
-  return [imgObj3[key]];
-});
+const createImageArray = obj => {   
 
-let imgArrayFlat3 = imgArray3.flat(1);
+  let imgArray = Object.keys(obj).map(function(key) {
+    return [obj[key]];
+  });
+  
+  imgArray.sort((a,b) => {    
+    if (a[0] < b[0]) return -1;
+    if (a[0] > b[0]) return 1;
+    return 0;
+  });  
+
+  return imgArray; 
+};
 
 
 export const SlidingPuzzle = props => {
@@ -36,8 +31,8 @@ export const SlidingPuzzle = props => {
   const nought = 'naught';     
 
   const styleSpan = {
-    width: '150px',
-    height: '100px',
+    width: '300px',
+    height: '200px',
     border: 'solid',
     borderWidth: '0.2px',
     borderColor: 'grey',
@@ -59,8 +54,8 @@ export const SlidingPuzzle = props => {
   }; 
   
   const naughtStyle = {
-    width: '150px',
-    height: '100px',
+    width: '300px',
+    height: '200px',
     border: 'none',
     display: 'table-cell',
     fontSize: '0',
@@ -71,7 +66,7 @@ export const SlidingPuzzle = props => {
     top: '50%',    
     transform: 'translateY(-50%)',
     height: '30%',
-    width: '450px',
+    width: '900px',
     backgroundImage: 'linear-gradient(to right, red , yellow)',
     opacity: '0.85',
     color: 'black',
@@ -109,8 +104,8 @@ export const SlidingPuzzle = props => {
 
   const [image, setImage] = useState(false);
 
-  const [whichImage, setWhichImage] = useState(imgArrayFlat1);
-  
+  const [whichImage, setWhichImage] = useState(createImageArray(imgObj1));
+    
   
   const updateUseStates = arr => {
     setPuzzleElements([...arr]);
@@ -295,13 +290,13 @@ export const SlidingPuzzle = props => {
   };
 
   const displayImage = (el) => {
-    if (image) return <img src = {whichImage[el]} style = {el != "naught" ? {height: '100%', width: '100%', zIndex: '-1', position: 'relative'} : {display: 'none'}}/>;
+    if (image) return <img src = {whichImage[el-1]} style = {el != "naught" ? {height: '100%', width: '100%', zIndex: '-1', position: 'relative'} : {display: 'none'}}/>;
   };
 
   const toggleImage = () => {
-    if (whichImage == imgArrayFlat1) setTimeout( () => setWhichImage(imgArrayFlat2), 500);   
-    if (whichImage == imgArrayFlat2) setTimeout( () => setWhichImage(imgArrayFlat3), 500);  
-    if (whichImage == imgArrayFlat3) setTimeout( () => setWhichImage(imgArrayFlat1), 500);   
+    if (JSON.stringify(whichImage).includes('superhero')) setTimeout( () => setWhichImage(createImageArray(imgObj2)), 500);   
+    if (JSON.stringify(whichImage).includes('react')) setTimeout( () => setWhichImage(createImageArray(imgObj3)), 500);  
+    if (JSON.stringify(whichImage).includes('stone-face')) setTimeout( () => setWhichImage(createImageArray(imgObj1)), 500);   
     fadeImage(); 
   };
 
