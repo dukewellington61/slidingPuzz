@@ -71,8 +71,8 @@ export const SlidingPuzzle = props => {
     opacity: '0.85',
     color: 'black',
     zIndex: '1',
-    fontFamily: 'sans-serif',
-    fontSize: '1.25em',
+    fontFamily: 'Comic Sans MS, cursive, sans-serif',
+    fontSize: '2.5em',
     fontWeight: 'bold',
     textAlign: 'center',
     display: 'flex',
@@ -407,7 +407,7 @@ export const SlidingPuzzle = props => {
               className = {'control-panel'}>
 
                 <button
-                className = {'button btn btn-primary'}
+                className = {'button btn-lg btn-primary'}
                 key = 'button'
                 onClick = {startOrEnd}
                 >

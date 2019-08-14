@@ -18,7 +18,8 @@ body {
 }
 
 .wrapper {
-  display: flex;
+  flex-direction: column;  
+  display: flex;    
   margin: 0 auto;
   background-color:rgba(0, 0, 0, 0) !important;  
 }
@@ -41,29 +42,24 @@ p {
 }
 
 .control-panel {
+  flex-direction: row;     
   max-width: 100%;
   position: relative;
-  display: flex;
-  flex-direction: column;    
+  display: flex;   
 }
 
 .button {
-  margin: 15px; 
-  
+  margin: 20px;
+  width: 200px;
 }
 
 @media (max-width: 1000px) {
-  .wrapper {
-    flex-direction: column;  
-    display: flex;   
-  }
-  .control-panel {
-    flex-direction: row;  
-    display: flex;   
-  }
   .button {
-    margin: 20px;
-  }    
+    font-size: 2em !important;
+    margin: 20px; 
+    width: 250px;
+    height: 75px;  
+  }
 }
 
 .down {
