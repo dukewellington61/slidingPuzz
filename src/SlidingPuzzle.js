@@ -31,8 +31,8 @@ export const SlidingPuzzle = props => {
   const nought = 'naught';     
 
   const styleSpan = {
-    width: '300px',
-    height: '200px',
+    width: '17vw',
+    height: '11vw',
     border: 'solid',
     borderWidth: '0.2px',
     borderColor: 'grey',
@@ -54,8 +54,8 @@ export const SlidingPuzzle = props => {
   }; 
   
   const naughtStyle = {
-    width: '300px',
-    height: '200px',
+    width: '17vw',
+    height: '11vw',
     border: 'none',
     display: 'table-cell',
     fontSize: '0',
@@ -66,13 +66,13 @@ export const SlidingPuzzle = props => {
     top: '50%',    
     transform: 'translateY(-50%)',
     height: '30%',
-    width: '900px',
+    width: '51vw',
     backgroundImage: 'linear-gradient(to right, red , yellow)',
     opacity: '0.85',
     color: 'black',
     zIndex: '1',
     fontFamily: 'Comic Sans MS, cursive, sans-serif',
-    fontSize: '2.5em',
+    fontSize: '2.5vw',
     fontWeight: 'bold',
     textAlign: 'center',
     display: 'flex',
