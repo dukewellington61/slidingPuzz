@@ -42,7 +42,8 @@ p {
 }
 
 .control-panel {
-  flex-direction: row;     
+  flex-direction: row;  
+  justify-content: space-between;   
   max-width: 100%;
   position: relative;
   display: flex;   
@@ -55,10 +56,11 @@ p {
 
 @media (max-width: 1000px) {
   .button {
-    font-size: 2em !important;
-    margin: 20px; 
-    width: 250px;
-    height: 75px;  
+    font-size: 2.75em !important;
+    margin: 5px; 
+    margin-top: 30px;
+    width: 300px;
+    height: 150px;  
   }
 }
 
