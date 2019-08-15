@@ -25972,14 +25972,15 @@ const SlidingPuzzle = props => {
     transform: 'translateY(-50%)',
     height: '30%',
     width: '51vw',
-    backgroundImage: 'linear-gradient(to right, red , yellow)',
+    backgroundImage: 'radial-gradient(ellipse at center,  rgba(255,116,0,1) 0%,rgba(255,116,0,1) 35%,rgba(255,116,0,0.2) 100%)',
     opacity: '0.85',
-    color: 'black',
+    color: 'white',
     zIndex: '1',
     fontFamily: 'Comic Sans MS, cursive, sans-serif',
-    fontSize: '2.5vw',
+    fontSize: '2.25vw',
     fontWeight: 'bold',
     textAlign: 'center',
+    textShadow: '3px 3px #ff0000',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center'
@@ -26395,7 +26396,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36641" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34509" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
