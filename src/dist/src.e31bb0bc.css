@@ -6,26 +6,12 @@ body {
   background-color:rgba(0, 0, 0, 0) !important;  
 }
 
-#app {
-  /* position: relative;
-  height: 750px;
-  width: 1000px; */
+#app {  
   background-color:rgba(0, 0, 0, 0) !important;  
 }
 
 .puzzle {  
   z-index: 1;
-  /* display: flex; */
-  /* height: 750px !important; 
-  width: 1000px !important;   */
-  /* justify-content: center; */
-  background-color:rgba(0, 0, 0, 0) !important;  
-}
-
-.wrapper {
-  flex-direction: column;  
-  display: flex;    
-  margin: 0 auto;
   background-color:rgba(0, 0, 0, 0) !important;  
 }
 
@@ -38,22 +24,19 @@ p {
   margin-bottom: 0 !important;
 }
 
-.row {
-  position: absolute;  
-  left: 50%;
-  transform: translateX(-50%);  
-  width: 70vw; 
-  height: 45vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-style: solid;
-  border-color: white;
-  border-width: 2px;
-}
-
-.puzzleBody {
-  position: relative;   
+@media (max-width: 500px) {  
+  .puzzleRows {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  .puzzle-tiles {
+    width: 30vw !important; 
+    height: 20vw !important;
+    font-size: 2em !important;
+  }
+  .naught {
+    font-size: 0 !important;
+  }
 }
 
 .control-panel {

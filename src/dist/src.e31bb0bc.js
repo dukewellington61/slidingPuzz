@@ -25955,8 +25955,8 @@ const SlidingPuzzle = props => {
   };
   const stylePuzzle = {
     position: 'relative',
-    width: '100%',
-    height: '100%',
+    // width: '100%',
+    // height: '100%',
     left: '0'
   };
   const naughtStyle = {
@@ -26302,12 +26302,6 @@ const SlidingPuzzle = props => {
     className: 'puzzle',
     style: stylePuzzle
   }, _react.default.createElement("div", {
-    className: 'row'
-  }, _react.default.createElement("div", {
-    className: 'wrapper'
-  }, _react.default.createElement("div", {
-    className: 'puzzleBody'
-  }, _react.default.createElement("div", {
     className: 'messageField',
     style: messageFieldStyle
   }, gameWon == false && gameHasBeenStartedBefore == false && _react.default.createElement("div", {
@@ -26321,9 +26315,9 @@ const SlidingPuzzle = props => {
     y: indexRow,
     x: index,
     onClick: gameState == true ? swapPositionTiles : undefined,
-    className: el,
+    className: el + ' puzzle-tiles',
     style: el == "naught" ? naughtStyle : numberOrTileStyle()
-  }, el, displayImage(el)))))), _react.default.createElement("div", {
+  }, el, displayImage(el))))), _react.default.createElement("div", {
     className: 'control-panel'
   }, _react.default.createElement("button", {
     className: 'button btn-lg btn-primary',
@@ -26345,7 +26339,7 @@ const SlidingPuzzle = props => {
       setPuzzleElements(createStartArray());
       fadeMessageField();
     }
-  }, "another image") : undefined))));
+  }, "another image") : undefined));
 };
 
 exports.SlidingPuzzle = SlidingPuzzle;
@@ -26396,7 +26390,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44619" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45565" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

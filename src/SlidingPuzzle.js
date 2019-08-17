@@ -48,8 +48,8 @@ export const SlidingPuzzle = props => {
 
   const stylePuzzle = {
     position: 'relative',
-    width: '100%',
-    height: '100%',
+    // width: '100%',
+    // height: '100%',
     left: '0'
   }; 
   
@@ -366,14 +366,11 @@ export const SlidingPuzzle = props => {
       >        
           
 
-          <div 
-          className = {'row'}>
+          
 
-            <div
-            className = {'wrapper'}>
+            
 
-              <div
-              className = {'puzzleBody'}> 
+              
 
                 <div
                   className = {'messageField'}
@@ -395,14 +392,14 @@ export const SlidingPuzzle = props => {
                     y = {indexRow}   
                     x = {index}         
                     onClick = {gameState == true ? swapPositionTiles : undefined}
-                    className = {el}
+                    className = {el + ' puzzle-tiles'}
                     style = {el == "naught" ? naughtStyle : numberOrTileStyle()}>{el}
                     {displayImage(el)}
                     </div>) }
                     
                   </div>) }  
 
-              </div>
+              
 
               <div
               className = {'control-panel'}>
@@ -433,9 +430,8 @@ export const SlidingPuzzle = props => {
 
               </div>
 
-            </div>
 
-        </div>
+        
       
       </div>     
     )  
