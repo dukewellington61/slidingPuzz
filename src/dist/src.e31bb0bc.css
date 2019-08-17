@@ -1,4 +1,12 @@
+html {
+  margin: 0 auto !important;
+  background-color:rgba(0, 0, 0, 0) !important; 
+  width: 1000px; 
+  height: 750px;
+}
+
 body {
+  margin: 0 auto !important;
   background-color:rgba(0, 0, 0, 0) !important; 
   width: 1000px; 
   height: 750px;
