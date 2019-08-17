@@ -1,3 +1,10 @@
+html {
+  background-color:rgba(0, 0, 0, 0) !important;  
+}
+
+body {
+  background-color:rgba(0, 0, 0, 0) !important;  
+}
 
 #app {
   /* position: relative;
@@ -32,7 +39,9 @@ p {
 }
 
 .row {
-  margin: 0 auto;
+  position: absolute;  
+  left: 50%;
+  transform: translateX(-50%);  
   width: 70vw; 
   height: 45vw;
   display: flex;
