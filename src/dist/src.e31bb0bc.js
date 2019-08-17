@@ -25950,13 +25950,10 @@ const SlidingPuzzle = props => {
     verticalAlign: 'middle',
     lineHeight: 'normal',
     color: 'white',
-    fontSize: '0',
     zIndex: '1'
   };
   const stylePuzzle = {
     position: 'relative',
-    // width: '100%',
-    // height: '100%',
     left: '0'
   };
   const naughtStyle = {
@@ -26209,9 +26206,11 @@ const SlidingPuzzle = props => {
     image == true ? setTimeout(() => setImage(false), 500) : setTimeout(() => setImage(true), 500);
     fadeImage();
     if (gameHasBeenStartedBefore) removeMessageField();
+    setTimeout(() => removeTurnOffNumberPuzzleTileClass(), 600);
   };
 
   const displayImage = el => {
+    turnNumberOnOrOff();
     if (image) return _react.default.createElement("img", {
       src: whichImage[el - 1],
       style: el != "naught" ? {
@@ -26225,6 +26224,22 @@ const SlidingPuzzle = props => {
     });
   };
 
+  const turnNumberOnOrOff = () => {
+    if (image) {
+      let arr = Array.from(document.querySelectorAll('.puzzle-tiles'));
+      arr.map(tile => tile.classList.add('turn-off-number-puzzle-tile'));
+    }
+
+    ;
+
+    if (!image) {
+      let arr = Array.from(document.querySelectorAll('.puzzle-tiles'));
+      arr.map(tile => tile.classList.remove('turn-off-number-puzzle-tile'));
+    }
+
+    ;
+  };
+
   const toggleImage = () => {
     if (JSON.stringify(whichImage).includes('superhero')) setTimeout(() => setWhichImage(createImageArray(_2.default)), 500);
     if (JSON.stringify(whichImage).includes('react')) setTimeout(() => setWhichImage(createImageArray(_3.default)), 500);
@@ -26233,10 +26248,15 @@ const SlidingPuzzle = props => {
   };
 
   const fadeImage = () => {
-    document.querySelector('.puzzleBody').classList.add('fadeOut');
-    setTimeout(() => document.querySelector('.puzzleBody').classList.remove('fadeOut'), 500);
-    setTimeout(() => document.querySelector('.puzzleBody').classList.add('fadeIn'), 500);
-    setTimeout(() => document.querySelector('.puzzleBody').classList.remove('fadeIn'), 1000);
+    let arrRows = Array.from(document.querySelectorAll('.puzzleRows'));
+    arrRows.map(row => row.classList.add('fadeOut'));
+    setTimeout(() => arrRows.map(row => row.classList.remove('fadeOut')), 500);
+    setTimeout(() => arrRows.map(row => row.classList.add('fadeIn')), 500);
+    setTimeout(() => arrRows.map(row => row.classList.remove('fadeIn')), 1000);
+    document.querySelector('.messageField').classList.add('fadeOut');
+    setTimeout(() => document.querySelector('.messageField').classList.remove('fadeOut'), 500);
+    setTimeout(() => document.querySelector('.messageField').classList.add('fadeIn'), 500);
+    setTimeout(() => document.querySelector('.messageField').classList.remove('fadeIn'), 1000);
   };
 
   const numberOrTileStyle = () => {
@@ -26390,7 +26410,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45565" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46213" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

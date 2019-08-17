@@ -41,15 +41,12 @@ export const SlidingPuzzle = props => {
     textAlign: 'center',
     verticalAlign: 'middle',
     lineHeight: 'normal',    
-    color: 'white',
-    fontSize: '0',
+    color: 'white',    
     zIndex: '1'
   };     
 
   const stylePuzzle = {
     position: 'relative',
-    // width: '100%',
-    // height: '100%',
     left: '0'
   }; 
   
@@ -288,10 +285,24 @@ export const SlidingPuzzle = props => {
     image == true ? setTimeout( () => setImage(false), 500) : setTimeout( () => setImage(true), 500);   
     fadeImage();
     if (gameHasBeenStartedBefore) removeMessageField();
+    setTimeout ( () => removeTurnOffNumberPuzzleTileClass(), 600)
+  };  
+ 
+  const displayImage = (el) => {
+    turnNumberOnOrOff();
+    if (image) return <img src = {whichImage[el-1]} style = {el != "naught" ? {height: '100%', width: '100%', zIndex: '-1', position: 'relative'} : {display: 'none'}}/>;    
   };
 
-  const displayImage = (el) => {
-    if (image) return <img src = {whichImage[el-1]} style = {el != "naught" ? {height: '100%', width: '100%', zIndex: '-1', position: 'relative'} : {display: 'none'}}/>;
+  const turnNumberOnOrOff = () => {
+    if (image) {
+      let arr = Array.from(document.querySelectorAll('.puzzle-tiles'));      
+      arr.map( tile => tile.classList.add('turn-off-number-puzzle-tile'));
+    };
+
+    if (!image) {
+      let arr = Array.from(document.querySelectorAll('.puzzle-tiles'));      
+      arr.map( tile => tile.classList.remove('turn-off-number-puzzle-tile'))
+    }; 
   };
 
   const toggleImage = () => {
@@ -302,10 +313,16 @@ export const SlidingPuzzle = props => {
   };
 
   const fadeImage = () => {
-    document.querySelector('.puzzleBody').classList.add('fadeOut');
-    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('fadeOut'), 500);
-    setTimeout( () => document.querySelector('.puzzleBody').classList.add('fadeIn'), 500);
-    setTimeout( () => document.querySelector('.puzzleBody').classList.remove('fadeIn'), 1000);
+    let arrRows = Array.from(document.querySelectorAll('.puzzleRows'));
+    arrRows.map(row => row.classList.add('fadeOut'));
+    setTimeout( () => arrRows.map(row => row.classList.remove('fadeOut')), 500);
+    setTimeout( () => arrRows.map(row => row.classList.add('fadeIn')), 500);
+    setTimeout( () => arrRows.map(row => row.classList.remove('fadeIn')), 1000);
+
+    document.querySelector('.messageField').classList.add('fadeOut');
+    setTimeout( () => document.querySelector('.messageField').classList.remove('fadeOut'), 500);
+    setTimeout( () => document.querySelector('.messageField').classList.add('fadeIn'), 500);
+    setTimeout( () => document.querySelector('.messageField').classList.remove('fadeIn'), 1000);
   };  
 
   const numberOrTileStyle = () => {
@@ -363,75 +380,62 @@ export const SlidingPuzzle = props => {
       <div
       className = {'puzzle'}
       style = {stylePuzzle}
-      >        
-          
+      >  
+        <div
+          className = {'messageField'}
+          style = {messageFieldStyle}>        
+          {gameWon == false && gameHasBeenStartedBefore == false && <div className = {'message-text'}><p>Hit the -start game- button</p> <p>and put those tiles back in the correct order</p></div>}
+          {gameWon == true && <p>Incredible! You did it!</p>}
+        </div>     
+      
+        { puzzleElements.map((el,indexRow) => 
 
-          
+          <div 
+          className = {'puzzleRows'}
+          key={indexRow}>
+          { el.map((el,index) => 
 
+            <div 
+            id = {tileID++}
+            key = {index} 
+            y = {indexRow}   
+            x = {index}         
+            onClick = {gameState == true ? swapPositionTiles : undefined}
+            className = {el + ' puzzle-tiles'}
+            style = {el == "naught" ? naughtStyle : numberOrTileStyle()}>{el}
+            {displayImage(el)}
+            </div>) }
             
+          </div>) }                
 
-              
+        <div
+        className = {'control-panel'}>
 
-                <div
-                  className = {'messageField'}
-                  style = {messageFieldStyle}>        
-                  {gameWon == false && gameHasBeenStartedBefore == false && <div className = {'message-text'}><p>Hit the -start game- button</p> <p>and put those tiles back in the correct order</p></div>}
-                  {gameWon == true && <p>Incredible! You did it!</p>}
-                </div>     
-              
-                { puzzleElements.map((el,indexRow) => 
+          <button
+          className = {'button btn-lg btn-primary'}
+          key = 'button'
+          onClick = {startOrEnd}
+          >
+            {gameState == true ? "stop game" : "start game"}
+          </button>  
 
-                  <div 
-                  className = {'puzzleRows'}
-                  key={indexRow}>
-                  { el.map((el,index) => 
+          { gameState == false ? <button
+          className = {'button button-img btn btn-default'}
+          key = 'button-img'
+          onClick = {() => {toggleImageNumber(); setPuzzleElements(createStartArray()); fadeMessageField()}}
+          >
+            {image ? 'numbers' : 'image'} 
+          </button> : undefined }
 
-                    <div 
-                    id = {tileID++}
-                    key = {index} 
-                    y = {indexRow}   
-                    x = {index}         
-                    onClick = {gameState == true ? swapPositionTiles : undefined}
-                    className = {el + ' puzzle-tiles'}
-                    style = {el == "naught" ? naughtStyle : numberOrTileStyle()}>{el}
-                    {displayImage(el)}
-                    </div>) }
-                    
-                  </div>) }  
+          { image && gameState == false ? <button
+          className = {'button button-another-img btn btn-default'}
+          key = 'button-another-img'
+          onClick = {() => {toggleImage(); setPuzzleElements(createStartArray()); fadeMessageField()}}
+          >
+            another image 
+          </button> : undefined }
 
-              
-
-              <div
-              className = {'control-panel'}>
-
-                <button
-                className = {'button btn-lg btn-primary'}
-                key = 'button'
-                onClick = {startOrEnd}
-                >
-                  {gameState == true ? "stop game" : "start game"}
-                </button>  
-
-                { gameState == false ? <button
-                className = {'button button-img btn btn-default'}
-                key = 'button-img'
-                onClick = {() => {toggleImageNumber(); setPuzzleElements(createStartArray()); fadeMessageField()}}
-                >
-                  {image ? 'numbers' : 'image'} 
-                </button> : undefined }
-
-                { image && gameState == false ? <button
-                className = {'button button-another-img btn btn-default'}
-                key = 'button-another-img'
-                onClick = {() => {toggleImage(); setPuzzleElements(createStartArray()); fadeMessageField()}}
-                >
-                  another image 
-                </button> : undefined }
-
-              </div>
-
-
-        
+        </div>        
       
       </div>     
     )  
