@@ -1,11 +1,13 @@
 body {
-  background-color:rgba(0, 0, 0, 0) !important;  
+  background-color:rgba(0, 0, 0, 0) !important; 
+  width: 1000px; 
+  height: 750px;
 }
 
 #app {
   position: relative;
-  height: 800px;
-  /* top: 20px; */
+  height: 750px;
+  width: 1000px;
   background-color:rgba(0, 0, 0, 0) !important;  
 }
 
