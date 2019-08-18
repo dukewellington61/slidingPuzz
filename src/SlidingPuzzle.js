@@ -63,7 +63,7 @@ export const SlidingPuzzle = props => {
     top: '50%',    
     transform: 'translateY(-50%)',
     height: '30%',
-    width: '51vw',
+    width: '100% !important',
     backgroundImage: 'radial-gradient(ellipse at center, rgba(255,116,0,1) 0%, rgba(255,116,0,1) 35%,rgba(255,116,0,0.2) 100%)',
     opacity: '0.85',
     color: 'white',
@@ -75,7 +75,7 @@ export const SlidingPuzzle = props => {
     textShadow: '3px 3px #ff0000',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center'       
+    justifyContent: 'center'         
   };
 
   const createStartArray = () => {
@@ -380,7 +380,7 @@ export const SlidingPuzzle = props => {
       className = {'puzzle'}
       style = {stylePuzzle}
       > 
-        <div
+        <div 
         className = {'puzzleBody'}>
 
           <div
@@ -408,7 +408,9 @@ export const SlidingPuzzle = props => {
               {displayImage(el)}
               </div>) }
               
-            </div>) }                
+            </div>) }   
+
+        </div>              
 
           <div
           className = {'control-panel'}>
@@ -437,9 +439,7 @@ export const SlidingPuzzle = props => {
               another image 
             </button> : undefined }
 
-          </div>        
-          
-        </div> 
+          </div>              
 
       </div>     
     )  

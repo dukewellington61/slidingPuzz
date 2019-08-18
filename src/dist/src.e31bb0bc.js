@@ -25969,7 +25969,7 @@ const SlidingPuzzle = props => {
     top: '50%',
     transform: 'translateY(-50%)',
     height: '30%',
-    width: '51vw',
+    width: '100% !important',
     backgroundImage: 'radial-gradient(ellipse at center, rgba(255,116,0,1) 0%, rgba(255,116,0,1) 35%,rgba(255,116,0,0.2) 100%)',
     opacity: '0.85',
     color: 'white',
@@ -26340,7 +26340,7 @@ const SlidingPuzzle = props => {
     onClick: gameState == true ? swapPositionTiles : undefined,
     className: el + ' puzzle-tiles',
     style: el == "naught" ? naughtStyle : numberOrTileStyle()
-  }, el, displayImage(el))))), _react.default.createElement("div", {
+  }, el, displayImage(el)))))), _react.default.createElement("div", {
     className: 'control-panel'
   }, _react.default.createElement("button", {
     className: 'button btn-lg btn-primary',
@@ -26362,7 +26362,7 @@ const SlidingPuzzle = props => {
       setPuzzleElements(createStartArray());
       fadeMessageField();
     }
-  }, "another image") : undefined)));
+  }, "another image") : undefined));
 };
 
 exports.SlidingPuzzle = SlidingPuzzle;
@@ -26413,7 +26413,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44451" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35629" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
