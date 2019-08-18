@@ -15,6 +15,10 @@ body {
   background-color:rgba(0, 0, 0, 0) !important;  
 }
 
+.puzzleBody {
+  display: inline-block;
+}
+
 .message-field-display-none {
   display: none !important;  
 }

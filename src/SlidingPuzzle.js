@@ -23,7 +23,6 @@ const createImageArray = obj => {
   return imgArray; 
 };
 
-
 export const SlidingPuzzle = props => {
 
   const level = 3;
@@ -380,63 +379,68 @@ export const SlidingPuzzle = props => {
       <div
       className = {'puzzle'}
       style = {stylePuzzle}
-      >  
+      > 
         <div
+        className = {'puzzleBody'}>
+
+          <div
           className = {'messageField'}
           style = {messageFieldStyle}>        
           {gameWon == false && gameHasBeenStartedBefore == false && <div className = {'message-text'}><p>Hit the -start game- button</p> <p>and put those tiles back in the correct order</p></div>}
           {gameWon == true && <p>Incredible! You did it!</p>}
-        </div>     
-      
-        { puzzleElements.map((el,indexRow) => 
-
-          <div 
-          className = {'puzzleRows'}
-          key={indexRow}>
-          { el.map((el,index) => 
+          </div>     
+        
+          { puzzleElements.map((el,indexRow) => 
 
             <div 
-            id = {tileID++}
-            key = {index} 
-            y = {indexRow}   
-            x = {index}         
-            onClick = {gameState == true ? swapPositionTiles : undefined}
-            className = {el + ' puzzle-tiles'}
-            style = {el == "naught" ? naughtStyle : numberOrTileStyle()}>{el}
-            {displayImage(el)}
-            </div>) }
-            
-          </div>) }                
+            className = {'puzzleRows'}
+            key={indexRow}>
+            { el.map((el,index) => 
 
-        <div
-        className = {'control-panel'}>
+              <div 
+              id = {tileID++}
+              key = {index} 
+              y = {indexRow}   
+              x = {index}         
+              onClick = {gameState == true ? swapPositionTiles : undefined}
+              className = {el + ' puzzle-tiles'}
+              style = {el == "naught" ? naughtStyle : numberOrTileStyle()}>{el}
+              {displayImage(el)}
+              </div>) }
+              
+            </div>) }                
 
-          <button
-          className = {'button btn-lg btn-primary'}
-          key = 'button'
-          onClick = {startOrEnd}
-          >
-            {gameState == true ? "stop game" : "start game"}
-          </button>  
+          <div
+          className = {'control-panel'}>
 
-          { gameState == false ? <button
-          className = {'button button-img btn btn-default'}
-          key = 'button-img'
-          onClick = {() => {toggleImageNumber(); setPuzzleElements(createStartArray()); fadeMessageField()}}
-          >
-            {image ? 'numbers' : 'image'} 
-          </button> : undefined }
+            <button
+            className = {'button btn-lg btn-primary'}
+            key = 'button'
+            onClick = {startOrEnd}
+            >
+              {gameState == true ? "stop game" : "start game"}
+            </button>  
 
-          { image && gameState == false ? <button
-          className = {'button button-another-img btn btn-default'}
-          key = 'button-another-img'
-          onClick = {() => {toggleImage(); setPuzzleElements(createStartArray()); fadeMessageField()}}
-          >
-            another image 
-          </button> : undefined }
+            { gameState == false ? <button
+            className = {'button button-img btn btn-default'}
+            key = 'button-img'
+            onClick = {() => {toggleImageNumber(); setPuzzleElements(createStartArray()); fadeMessageField()}}
+            >
+              {image ? 'numbers' : 'image'} 
+            </button> : undefined }
 
-        </div>        
-      
+            { image && gameState == false ? <button
+            className = {'button button-another-img btn btn-default'}
+            key = 'button-another-img'
+            onClick = {() => {toggleImage(); setPuzzleElements(createStartArray()); fadeMessageField()}}
+            >
+              another image 
+            </button> : undefined }
+
+          </div>        
+          
+        </div> 
+
       </div>     
     )  
 };
