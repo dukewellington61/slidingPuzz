@@ -25950,6 +25950,7 @@ const SlidingPuzzle = props => {
     verticalAlign: 'middle',
     lineHeight: 'normal',
     color: 'white',
+    fontSize: '0',
     zIndex: '1'
   };
   const stylePuzzle = {
@@ -25969,7 +25970,7 @@ const SlidingPuzzle = props => {
     transform: 'translateY(-50%)',
     height: '30%',
     width: '51vw',
-    backgroundImage: 'radial-gradient(ellipse at center,  rgba(255,116,0,1) 0%,rgba(255,116,0,1) 35%,rgba(255,116,0,0.2) 100%)',
+    backgroundImage: 'radial-gradient(ellipse at center, rgba(255,116,0,1) 0%, rgba(255,116,0,1) 35%,rgba(255,116,0,0.2) 100%)',
     opacity: '0.85',
     color: 'white',
     zIndex: '1',
@@ -26206,7 +26207,6 @@ const SlidingPuzzle = props => {
     image == true ? setTimeout(() => setImage(false), 500) : setTimeout(() => setImage(true), 500);
     fadeImage();
     if (gameHasBeenStartedBefore) removeMessageField();
-    setTimeout(() => removeTurnOffNumberPuzzleTileClass(), 600);
   };
 
   const displayImage = el => {
@@ -26238,6 +26238,7 @@ const SlidingPuzzle = props => {
     }
 
     ;
+    console.log(image);
   };
 
   const toggleImage = () => {
@@ -26262,8 +26263,8 @@ const SlidingPuzzle = props => {
   const numberOrTileStyle = () => {
     if (image) return styleSpan;
 
-    if (image == false) {
-      styleSpan.fontSize = '3em';
+    if (!image) {
+      window.innerWidth <= 500 ? styleSpan.fontSize = '2em' : styleSpan.fontSize = '3em';
       styleSpan.backgroundColor = 'black';
       return styleSpan;
     }
@@ -26410,7 +26411,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46213" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35845" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

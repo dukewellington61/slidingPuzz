@@ -42,7 +42,8 @@ export const SlidingPuzzle = props => {
     verticalAlign: 'middle',
     lineHeight: 'normal',    
     color: 'white',    
-    zIndex: '1'
+    fontSize: '0',
+    zIndex: '1'    
   };     
 
   const stylePuzzle = {
@@ -64,7 +65,7 @@ export const SlidingPuzzle = props => {
     transform: 'translateY(-50%)',
     height: '30%',
     width: '51vw',
-    backgroundImage: 'radial-gradient(ellipse at center,  rgba(255,116,0,1) 0%,rgba(255,116,0,1) 35%,rgba(255,116,0,0.2) 100%)',
+    backgroundImage: 'radial-gradient(ellipse at center, rgba(255,116,0,1) 0%, rgba(255,116,0,1) 35%,rgba(255,116,0,0.2) 100%)',
     opacity: '0.85',
     color: 'white',
     zIndex: '1',
@@ -90,7 +91,6 @@ export const SlidingPuzzle = props => {
       };
       return puzzleArray;
   };    
-
 
   const [puzzleElements, setPuzzleElements] = useState(createStartArray());  
 
@@ -284,25 +284,25 @@ export const SlidingPuzzle = props => {
   const toggleImageNumber = () => {
     image == true ? setTimeout( () => setImage(false), 500) : setTimeout( () => setImage(true), 500);   
     fadeImage();
-    if (gameHasBeenStartedBefore) removeMessageField();
-    setTimeout ( () => removeTurnOffNumberPuzzleTileClass(), 600)
-  };  
- 
-  const displayImage = (el) => {
+    if (gameHasBeenStartedBefore) removeMessageField();    
+  };    
+
+  const displayImage = (el) => {    
     turnNumberOnOrOff();
     if (image) return <img src = {whichImage[el-1]} style = {el != "naught" ? {height: '100%', width: '100%', zIndex: '-1', position: 'relative'} : {display: 'none'}}/>;    
   };
 
   const turnNumberOnOrOff = () => {
-    if (image) {
+    if (image) {      
       let arr = Array.from(document.querySelectorAll('.puzzle-tiles'));      
       arr.map( tile => tile.classList.add('turn-off-number-puzzle-tile'));
     };
 
-    if (!image) {
+    if (!image) {      
       let arr = Array.from(document.querySelectorAll('.puzzle-tiles'));      
       arr.map( tile => tile.classList.remove('turn-off-number-puzzle-tile'))
     }; 
+    console.log(image);
   };
 
   const toggleImage = () => {
@@ -327,8 +327,8 @@ export const SlidingPuzzle = props => {
 
   const numberOrTileStyle = () => {
     if (image) return styleSpan;
-    if (image == false) {
-      styleSpan.fontSize = '3em';
+    if (!image) {
+      window.innerWidth <= 500 ? styleSpan.fontSize = '2em' : styleSpan.fontSize = '3em'
       styleSpan.backgroundColor = 'black';
       return styleSpan;
     };
