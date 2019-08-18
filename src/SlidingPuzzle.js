@@ -8,6 +8,8 @@ import imgObj2 from '../src/img2/*.png';
 
 import imgObj3 from '../src/img3/*.png';
 
+import imgObj4 from '../src/img4/*.gif';
+
 const createImageArray = obj => {   
 
   let imgArray = Object.keys(obj).map(function(key) {
@@ -286,23 +288,9 @@ export const SlidingPuzzle = props => {
     if (gameHasBeenStartedBefore) removeMessageField();    
   };    
 
-  const displayImage = (el) => {    
-    turnNumberOnOrOff();
-    if (image) return <img src = {whichImage[el-1]} style = {el != "naught" ? {height: '100%', width: '100%', zIndex: '-1', position: 'relative'} : {display: 'none'}}/>;    
-  };
-
-  const turnNumberOnOrOff = () => {
-    if (image) {      
-      let arr = Array.from(document.querySelectorAll('.puzzle-tiles'));      
-      arr.map( tile => tile.classList.add('turn-off-number-puzzle-tile'));
-    };
-
-    if (!image) {      
-      let arr = Array.from(document.querySelectorAll('.puzzle-tiles'));      
-      arr.map( tile => tile.classList.remove('turn-off-number-puzzle-tile'))
-    }; 
-    console.log(image);
-  };
+  const displayImage = (el) => {   
+    if (image) return <img src = {whichImage[el-1] || imgObj4.spinner} style = {el != "naught" ? {height: '100%', width: '100%', zIndex: '-1', position: 'relative'} : {display: 'none'}}/>    
+  };  
 
   const toggleImage = () => {
     if (JSON.stringify(whichImage).includes('superhero')) setTimeout( () => setWhichImage(createImageArray(imgObj2)), 500);   

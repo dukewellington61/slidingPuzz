@@ -25901,7 +25901,13 @@ module.exports = {
   "stone-face-7": require("./stone-face-7.png"),
   "stone-face-8": require("./stone-face-8.png")
 };
-},{"./stone-face-1.png":"img3/stone-face-1.png","./stone-face-2.png":"img3/stone-face-2.png","./stone-face-3.png":"img3/stone-face-3.png","./stone-face-4.png":"img3/stone-face-4.png","./stone-face-5.png":"img3/stone-face-5.png","./stone-face-6.png":"img3/stone-face-6.png","./stone-face-7.png":"img3/stone-face-7.png","./stone-face-8.png":"img3/stone-face-8.png"}],"SlidingPuzzle.js":[function(require,module,exports) {
+},{"./stone-face-1.png":"img3/stone-face-1.png","./stone-face-2.png":"img3/stone-face-2.png","./stone-face-3.png":"img3/stone-face-3.png","./stone-face-4.png":"img3/stone-face-4.png","./stone-face-5.png":"img3/stone-face-5.png","./stone-face-6.png":"img3/stone-face-6.png","./stone-face-7.png":"img3/stone-face-7.png","./stone-face-8.png":"img3/stone-face-8.png"}],"img4/spinner.gif":[function(require,module,exports) {
+module.exports = "/spinner.2fc600b4.gif";
+},{}],"img4/*.gif":[function(require,module,exports) {
+module.exports = {
+  "spinner": require("./spinner.gif")
+};
+},{"./spinner.gif":"img4/spinner.gif"}],"SlidingPuzzle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25918,6 +25924,8 @@ var _ = _interopRequireDefault(require("../src/img1/*.png"));
 var _2 = _interopRequireDefault(require("../src/img2/*.png"));
 
 var _3 = _interopRequireDefault(require("../src/img3/*.png"));
+
+var _4 = _interopRequireDefault(require("../src/img4/*.gif"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26210,9 +26218,8 @@ const SlidingPuzzle = props => {
   };
 
   const displayImage = el => {
-    turnNumberOnOrOff();
     if (image) return _react.default.createElement("img", {
-      src: whichImage[el - 1],
+      src: whichImage[el - 1] || _4.default.spinner,
       style: el != "naught" ? {
         height: '100%',
         width: '100%',
@@ -26222,23 +26229,6 @@ const SlidingPuzzle = props => {
         display: 'none'
       }
     });
-  };
-
-  const turnNumberOnOrOff = () => {
-    if (image) {
-      let arr = Array.from(document.querySelectorAll('.puzzle-tiles'));
-      arr.map(tile => tile.classList.add('turn-off-number-puzzle-tile'));
-    }
-
-    ;
-
-    if (!image) {
-      let arr = Array.from(document.querySelectorAll('.puzzle-tiles'));
-      arr.map(tile => tile.classList.remove('turn-off-number-puzzle-tile'));
-    }
-
-    ;
-    console.log(image);
   };
 
   const toggleImage = () => {
@@ -26366,7 +26356,7 @@ const SlidingPuzzle = props => {
 };
 
 exports.SlidingPuzzle = SlidingPuzzle;
-},{"react":"../node_modules/react/index.js","./style.css":"style.css","../src/img1/*.png":"img1/*.png","../src/img2/*.png":"img2/*.png","../src/img3/*.png":"img3/*.png"}],"../node_modules/bootstrap/dist/css/bootstrap.css":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./style.css":"style.css","../src/img1/*.png":"img1/*.png","../src/img2/*.png":"img2/*.png","../src/img3/*.png":"img3/*.png","../src/img4/*.gif":"img4/*.gif"}],"../node_modules/bootstrap/dist/css/bootstrap.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -26413,7 +26403,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35629" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35033" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
