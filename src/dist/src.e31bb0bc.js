@@ -26232,6 +26232,7 @@ const SlidingPuzzle = props => {
   };
 
   const toggleImage = () => {
+    setWhichImage(0);
     if (JSON.stringify(whichImage).includes('superhero')) setTimeout(() => setWhichImage(createImageArray(_2.default)), 500);
     if (JSON.stringify(whichImage).includes('react')) setTimeout(() => setWhichImage(createImageArray(_3.default)), 500);
     if (JSON.stringify(whichImage).includes('stone-face')) setTimeout(() => setWhichImage(createImageArray(_.default)), 500);
@@ -26403,7 +26404,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35033" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41603" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
