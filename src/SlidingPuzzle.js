@@ -282,9 +282,9 @@ export const SlidingPuzzle = props => {
     setTimeout( () => document.querySelector('.puzzleBody').classList.remove('blur'), 600);
   };
 
-  const toggleImageNumber = () => {
+  const toggleImageNumber = () => {    
     image == true ? setTimeout( () => setImage(false), 500) : setTimeout( () => setImage(true), 500);   
-    fadeImage();
+    toggleImage();
     if (gameHasBeenStartedBefore) removeMessageField();    
   };    
 
@@ -293,10 +293,10 @@ export const SlidingPuzzle = props => {
   };  
 
   const toggleImage = () => {
-    setTimeout( () => setWhichImage(0), 500);
+    setTimeout( () => setWhichImage(0), 500);    
     if (JSON.stringify(whichImage).includes('superhero')) setTimeout( () => setWhichImage(createImageArray(imgObj2)), 500);   
     if (JSON.stringify(whichImage).includes('react')) setTimeout( () => setWhichImage(createImageArray(imgObj3)), 500);  
-    if (JSON.stringify(whichImage).includes('stone-face')) setTimeout( () => setWhichImage(createImageArray(imgObj1)), 500);   
+    if (JSON.stringify(whichImage).includes('stone-face')) setTimeout( () => setWhichImage(createImageArray(imgObj1)), 500);      
     fadeImage(); 
   };
 
