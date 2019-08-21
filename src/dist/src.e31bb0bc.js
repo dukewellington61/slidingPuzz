@@ -25878,10 +25878,10 @@ module.exports = {
 module.exports = "/stone-face-1.cfce6d1c.png";
 },{}],"img3/stone-face-2.png":[function(require,module,exports) {
 module.exports = "/stone-face-2.f471f2fe.png";
-},{}],"img3/stone-face-3.png":[function(require,module,exports) {
-module.exports = "/stone-face-3.90c28f6d.png";
 },{}],"img3/stone-face-4.png":[function(require,module,exports) {
 module.exports = "/stone-face-4.42bfd93b.png";
+},{}],"img3/stone-face-3.png":[function(require,module,exports) {
+module.exports = "/stone-face-3.90c28f6d.png";
 },{}],"img3/stone-face-5.png":[function(require,module,exports) {
 module.exports = "/stone-face-5.0a626993.png";
 },{}],"img3/stone-face-6.png":[function(require,module,exports) {
@@ -25894,14 +25894,14 @@ module.exports = "/stone-face-8.a11a28ef.png";
 module.exports = {
   "stone-face-1": require("./stone-face-1.png"),
   "stone-face-2": require("./stone-face-2.png"),
-  "stone-face-3": require("./stone-face-3.png"),
   "stone-face-4": require("./stone-face-4.png"),
+  "stone-face-3": require("./stone-face-3.png"),
   "stone-face-5": require("./stone-face-5.png"),
   "stone-face-6": require("./stone-face-6.png"),
   "stone-face-7": require("./stone-face-7.png"),
   "stone-face-8": require("./stone-face-8.png")
 };
-},{"./stone-face-1.png":"img3/stone-face-1.png","./stone-face-2.png":"img3/stone-face-2.png","./stone-face-3.png":"img3/stone-face-3.png","./stone-face-4.png":"img3/stone-face-4.png","./stone-face-5.png":"img3/stone-face-5.png","./stone-face-6.png":"img3/stone-face-6.png","./stone-face-7.png":"img3/stone-face-7.png","./stone-face-8.png":"img3/stone-face-8.png"}],"img4/spinner.gif":[function(require,module,exports) {
+},{"./stone-face-1.png":"img3/stone-face-1.png","./stone-face-2.png":"img3/stone-face-2.png","./stone-face-4.png":"img3/stone-face-4.png","./stone-face-3.png":"img3/stone-face-3.png","./stone-face-5.png":"img3/stone-face-5.png","./stone-face-6.png":"img3/stone-face-6.png","./stone-face-7.png":"img3/stone-face-7.png","./stone-face-8.png":"img3/stone-face-8.png"}],"img4/spinner.gif":[function(require,module,exports) {
 module.exports = "/spinner.2fc600b4.gif";
 },{}],"img4/*.gif":[function(require,module,exports) {
 module.exports = {
@@ -26232,6 +26232,7 @@ const SlidingPuzzle = props => {
   };
 
   const toggleImage = () => {
+    console.log('test');
     setTimeout(() => setWhichImage(0), 500);
     if (JSON.stringify(whichImage).includes('superhero')) setTimeout(() => setWhichImage(createImageArray(_2.default)), 500);
     if (JSON.stringify(whichImage).includes('react')) setTimeout(() => setWhichImage(createImageArray(_3.default)), 500);
@@ -26404,7 +26405,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37879" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34673" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

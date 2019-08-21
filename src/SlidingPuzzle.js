@@ -293,6 +293,7 @@ export const SlidingPuzzle = props => {
   };  
 
   const toggleImage = () => {
+    console.log('test');
     setTimeout( () => setWhichImage(0), 500);    
     if (JSON.stringify(whichImage).includes('superhero')) setTimeout( () => setWhichImage(createImageArray(imgObj2)), 500);   
     if (JSON.stringify(whichImage).includes('react')) setTimeout( () => setWhichImage(createImageArray(imgObj3)), 500);  
