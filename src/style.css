@@ -1,3 +1,5 @@
+/* Canvas */
+
 html {
   background-color:rgba(0, 0, 0, 0) !important;  
 }
@@ -13,6 +15,9 @@ body {
   background-color:rgba(0, 0, 0, 0) !important;    
 }
 
+
+/* Puzzle Body */
+
 .puzzle {    
   z-index: 1;  
   background-color:rgba(0, 0, 0, 0) !important;   
@@ -22,32 +27,20 @@ body {
   display: none !important;  
 }
 
-/* @media (max-width: 500px) {
-  .messageField {
-    width: 100% !important;
-  }
-} */
-
 p {
   margin-top: 0;
   margin-bottom: 0 !important;
+  font-size: 2em !important;
 }
 
-@media (max-width: 500px) {  
-  .puzzleRows {
-    width: 90vw;
-    margin: 0 auto;
-  }
-  .puzzle-tiles {
-    width: 30vw !important; 
-    height: 20vw !important;
-  }
-  .naught {
-    font-size: 0 !important;
-  }
-  p {
-    font-size: 2em !important;
-  }
+.puzzleRows {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.puzzle-tiles {
+  width: 30vw !important; 
+  height: 20vw !important;
 }
 
 .turn-off-number-puzzle-tile {
@@ -63,20 +56,17 @@ p {
 }
 
 .button {
-  font-size: 1.5vw !important;
-  width: 15vw;
+  font-size: 0.75em !important;
+  margin: 5px; 
+  margin-top: 30px;
+  width: 8em;
+  height: 3em;  
   white-space: nowrap;
 }
 
-@media (max-width: 500px) {
-  .button {
-    font-size: 0.75em !important;
-    margin: 5px; 
-    margin-top: 30px;
-    width: 8em;
-    height: 3em;  
-  }
-}
+
+
+/* Effects */
 
 .down {
     -webkit-animation: down 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
