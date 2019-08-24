@@ -25947,8 +25947,8 @@ const SlidingPuzzle = props => {
   const level = 3;
   const nought = 'naught';
   const styleSpan = {
-    width: '17vw',
-    height: '11vw',
+    width: '30vw',
+    height: '12.5vh',
     border: 'solid',
     borderWidth: '0.2px',
     borderColor: 'grey',
@@ -25966,8 +25966,8 @@ const SlidingPuzzle = props => {
     left: '0'
   };
   const naughtStyle = {
-    width: '17vw',
-    height: '11vw',
+    width: '30vw',
+    height: '12.5vh',
     border: 'none',
     display: 'table-cell',
     fontSize: '0'
@@ -25983,7 +25983,7 @@ const SlidingPuzzle = props => {
     color: 'white',
     zIndex: '1',
     fontFamily: 'Comic Sans MS, cursive, sans-serif',
-    fontSize: '2.25vw',
+    fontSize: '1',
     fontWeight: 'bold',
     textAlign: 'center',
     textShadow: '3px 3px #ff0000',
@@ -26406,7 +26406,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35561" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33009" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

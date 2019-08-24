@@ -32,8 +32,8 @@ export const SlidingPuzzle = props => {
   const nought = 'naught';     
 
   const styleSpan = {
-    width: '17vw',
-    height: '11vw',
+    width: '30vw',
+    height: '12.5vh',
     border: 'solid',
     borderWidth: '0.2px',
     borderColor: 'grey',
@@ -53,8 +53,8 @@ export const SlidingPuzzle = props => {
   }; 
   
   const naughtStyle = {
-    width: '17vw',
-    height: '11vw',
+    width: '30vw',
+    height: '12.5vh',
     border: 'none',
     display: 'table-cell',
     fontSize: '0',
@@ -71,7 +71,7 @@ export const SlidingPuzzle = props => {
     color: 'white',
     zIndex: '1',
     fontFamily: 'Comic Sans MS, cursive, sans-serif',
-    fontSize: '2.25vw',
+    fontSize: '1',
     fontWeight: 'bold',
     textAlign: 'center',
     textShadow: '3px 3px #ff0000',

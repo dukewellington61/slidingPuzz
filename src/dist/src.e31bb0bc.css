@@ -34,31 +34,27 @@ p {
 }
 
 .puzzleRows {
-  width: 51vw;
+  width: 90vw;
   margin: 0 auto;
-}
-
-.puzzle-tiles {
-  width: 17vw !important; 
-  height: 11vw !important;
 }
 
 .turn-off-number-puzzle-tile {
   font-size: 0 !important;
 }
 
-.control-panel {
-  margin-top: 1.5vw;
+.control-panel {  
   display : flex;
 	justify-content : space-between;
   width: 100%;
-  position: absolute;     
+  position: absolute;    
+  height: 5vh; 
 }
 
 .button {
   font-size: 0.75em !important;
+  font-weight: bolder;
   margin: 5px; 
-  margin-top: 30px;
+  margin-top: 15px;
   width: 8em;
   height: 3em;  
   white-space: nowrap;
