@@ -318,7 +318,7 @@ export const SlidingPuzzle = props => {
   const numberOrTileStyle = () => {
     if (image) return styleSpan;
     if (!image) {
-      window.innerWidth <= 750 ? styleSpan.fontSize = '2em' : styleSpan.fontSize = '3em'
+      window.innerWidth <= 799 ? styleSpan.fontSize = '2em' : styleSpan.fontSize = '3em'
       styleSpan.backgroundColor = 'black';
       return styleSpan;
     };

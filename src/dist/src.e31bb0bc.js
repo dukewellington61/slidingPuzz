@@ -26257,7 +26257,7 @@ const SlidingPuzzle = props => {
     if (image) return styleSpan;
 
     if (!image) {
-      window.innerWidth <= 750 ? styleSpan.fontSize = '2em' : styleSpan.fontSize = '3em';
+      window.innerWidth <= 799 ? styleSpan.fontSize = '2em' : styleSpan.fontSize = '3em';
       styleSpan.backgroundColor = 'black';
       return styleSpan;
     }
@@ -26406,7 +26406,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37511" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35561" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

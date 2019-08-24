@@ -30,11 +30,11 @@ body {
 p {
   margin-top: 0;
   margin-bottom: 0 !important;
-  font-size: 2em !important;
+  font-size: 1em !important;
 }
 
 .puzzleRows {
-  width: 90vw;
+  width: 51vw;
   margin: 0 auto;
 }
 
