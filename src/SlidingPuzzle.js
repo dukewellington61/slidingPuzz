@@ -33,7 +33,7 @@ export const SlidingPuzzle = props => {
 
   const styleSpan = {
     width: '30vw',
-    height: '12.5vh',
+    height: '25vh',
     border: 'solid',
     borderWidth: '0.2px',
     borderColor: 'grey',
