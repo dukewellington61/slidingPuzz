@@ -77,7 +77,8 @@ export const SlidingPuzzle = props => {
     textShadow: '3px 3px #ff0000',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center'         
+    justifyContent: 'center',
+    width: '100%'         
   };
 
   const createStartArray = () => {

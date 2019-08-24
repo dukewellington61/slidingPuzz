@@ -22,11 +22,11 @@ body {
   display: none !important;  
 }
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   .messageField {
     width: 100% !important;
   }
-}
+} */
 
 p {
   margin-top: 0;
