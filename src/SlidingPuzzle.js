@@ -1,5 +1,7 @@
 import React, { useState} from "react";
 
+import Button from 'react-bootstrap/Button';
+
 import './style.css';
 
 import imgObjSpinner from '../src/img4/*.gif';
@@ -407,29 +409,29 @@ export const SlidingPuzzle = props => {
           <div
           className = {'control-panel'}>
 
-            <button
-            className = {'button btn-lg btn-primary'}
+            <Button
+            className = {'btn btn-primary btn-lg'}
             key = 'button'
             onClick = {startOrEnd}
             >
               {gameState == true ? "stop game" : "start game"}
-            </button>  
+            </Button>  
 
-            { gameState == false ? <button
-            className = {'button button-img btn btn-default'}
+            { gameState == false ? <Button
+            className = {'btn btn-secondary btn-lg'}
             key = 'button-img'
             onClick = {() => {toggleImageNumber(); setPuzzleElements(createStartArray()); fadeMessageField()}}
             >
               {image ? 'numbers' : 'image'} 
-            </button> : undefined }
+            </Button> : undefined }
 
-            { image && gameState == false ? <button
-            className = {'button button-another-img btn btn-default'}
+            { image && gameState == false ? <Button
+            className = {'btn btn-secondary btn-lg'}
             key = 'button-another-img'
             onClick = {() => {toggleImage(); setPuzzleElements(createStartArray()); fadeMessageField()}}
             >
               another image 
-            </button> : undefined }
+            </Button> : undefined }
 
           </div>              
 
