@@ -31483,8 +31483,8 @@ const SlidingPuzzle = props => {
   };
 
   const startGameAnimation = () => {
-    document.querySelector('.button').classList.add('button-blur');
-    setTimeout(() => document.querySelector('.button').classList.remove('button-blur'), 600);
+    document.querySelector('.btn').classList.add('button-blur');
+    setTimeout(() => document.querySelector('.btn').classList.remove('button-blur'), 600);
     document.querySelector('.puzzleBody').classList.add('rotate-scale-up');
     setTimeout(() => document.querySelector('.puzzleBody').classList.remove('rotate-scale-up'), 2000);
     document.querySelector('.puzzleBody').classList.add('blur');
@@ -31679,7 +31679,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53688" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50279" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

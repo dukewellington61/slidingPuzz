@@ -276,8 +276,8 @@ export const SlidingPuzzle = props => {
   };  
 
   const startGameAnimation = () => {
-    document.querySelector('.button').classList.add('button-blur');
-    setTimeout( () => document.querySelector('.button').classList.remove('button-blur'), 600);
+    document.querySelector('.btn').classList.add('button-blur');
+    setTimeout( () => document.querySelector('.btn').classList.remove('button-blur'), 600);
     
     document.querySelector('.puzzleBody').classList.add('rotate-scale-up');       
     setTimeout( () => document.querySelector('.puzzleBody').classList.remove('rotate-scale-up'), 2000);  
