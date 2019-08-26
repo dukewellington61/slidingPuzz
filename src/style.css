@@ -58,6 +58,8 @@ p {
   width: 8em;
   height: 3em;  
   white-space: nowrap;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 
