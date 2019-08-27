@@ -1,0 +1,41 @@
+{
+  "name": "test",
+  "engines": {
+    "node": "==10.16.0",
+    "npm": "==6.9.0"
+  },
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "parcel-bundler": "^1.12.3",
+    "popper.js": "^1.15.0",
+    "react": "^16.9.0",
+    "react-bootstrap": "^1.0.0-beta.12",
+    "react-dom": "^16.9.0",
+    "react-scripts": "3.0.1",
+    
+    "src": "^1.1.2",
+    "style.css": "^1.0.0"
+  },
+  "scripts": {
+    "start": "npx parcel src/index.html",
+    "build": "npx parcel build src/index.html"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
