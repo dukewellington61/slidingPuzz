@@ -31109,46 +31109,28 @@ module.exports = "/1-superhero-1.091943ff.png";
 module.exports = "/2-superhero-2.1d7d48c2.png";
 },{}],"img1/3-superhero-3.png":[function(require,module,exports) {
 module.exports = "/3-superhero-3.723546a7.png";
-<<<<<<< HEAD
-=======
 },{}],"img1/4-superhero-4.png":[function(require,module,exports) {
 module.exports = "/4-superhero-4.e81808c4.png";
->>>>>>> 8b9b49ddbaeb2f998151fc144a372c41df7ac263
-},{}],"img1/5-superhero-5.png":[function(require,module,exports) {
-module.exports = "/5-superhero-5.75a353f6.png";
 },{}],"img1/6-superhero-6.png":[function(require,module,exports) {
 module.exports = "/6-superhero-6.6a123465.png";
-<<<<<<< HEAD
-},{}],"img1/4-superhero-4.png":[function(require,module,exports) {
-module.exports = "/4-superhero-4.e81808c4.png";
-=======
->>>>>>> 8b9b49ddbaeb2f998151fc144a372c41df7ac263
 },{}],"img1/7-superhero-7.png":[function(require,module,exports) {
 module.exports = "/7-superhero-7.20d86cd9.png";
 },{}],"img1/8-superhero-8.png":[function(require,module,exports) {
 module.exports = "/8-superhero-8.55dd39d2.png";
+},{}],"img1/5-superhero-5.png":[function(require,module,exports) {
+module.exports = "/5-superhero-5.75a353f6.png";
 },{}],"img1/*.png":[function(require,module,exports) {
 module.exports = {
   "1-superhero-1": require("./1-superhero-1.png"),
   "2-superhero-2": require("./2-superhero-2.png"),
   "3-superhero-3": require("./3-superhero-3.png"),
-<<<<<<< HEAD
-  "5-superhero-5": require("./5-superhero-5.png"),
-  "6-superhero-6": require("./6-superhero-6.png"),
   "4-superhero-4": require("./4-superhero-4.png"),
-  "7-superhero-7": require("./7-superhero-7.png"),
-  "8-superhero-8": require("./8-superhero-8.png")
-};
-},{"./1-superhero-1.png":"img1/1-superhero-1.png","./2-superhero-2.png":"img1/2-superhero-2.png","./3-superhero-3.png":"img1/3-superhero-3.png","./5-superhero-5.png":"img1/5-superhero-5.png","./6-superhero-6.png":"img1/6-superhero-6.png","./4-superhero-4.png":"img1/4-superhero-4.png","./7-superhero-7.png":"img1/7-superhero-7.png","./8-superhero-8.png":"img1/8-superhero-8.png"}],"img2/react-1.png":[function(require,module,exports) {
-=======
-  "4-superhero-4": require("./4-superhero-4.png"),
-  "5-superhero-5": require("./5-superhero-5.png"),
   "6-superhero-6": require("./6-superhero-6.png"),
   "7-superhero-7": require("./7-superhero-7.png"),
-  "8-superhero-8": require("./8-superhero-8.png")
+  "8-superhero-8": require("./8-superhero-8.png"),
+  "5-superhero-5": require("./5-superhero-5.png")
 };
-},{"./1-superhero-1.png":"img1/1-superhero-1.png","./2-superhero-2.png":"img1/2-superhero-2.png","./3-superhero-3.png":"img1/3-superhero-3.png","./4-superhero-4.png":"img1/4-superhero-4.png","./5-superhero-5.png":"img1/5-superhero-5.png","./6-superhero-6.png":"img1/6-superhero-6.png","./7-superhero-7.png":"img1/7-superhero-7.png","./8-superhero-8.png":"img1/8-superhero-8.png"}],"img2/react-1.png":[function(require,module,exports) {
->>>>>>> 8b9b49ddbaeb2f998151fc144a372c41df7ac263
+},{"./1-superhero-1.png":"img1/1-superhero-1.png","./2-superhero-2.png":"img1/2-superhero-2.png","./3-superhero-3.png":"img1/3-superhero-3.png","./4-superhero-4.png":"img1/4-superhero-4.png","./6-superhero-6.png":"img1/6-superhero-6.png","./7-superhero-7.png":"img1/7-superhero-7.png","./8-superhero-8.png":"img1/8-superhero-8.png","./5-superhero-5.png":"img1/5-superhero-5.png"}],"img2/react-1.png":[function(require,module,exports) {
 module.exports = "/react-1.2fe694ec.png";
 },{}],"img2/react-2.png":[function(require,module,exports) {
 module.exports = "/react-2.1d84e922.png";
@@ -31227,6 +31209,8 @@ var _4 = _interopRequireDefault(require("../src/img3/*.png"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+console.log(window.innerWidth);
 
 const createImageArray = obj => {
   let imgArray = Object.keys(obj).map(function (key) {
@@ -31697,11 +31681,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34769" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50279" + '/');
->>>>>>> 8b9b49ddbaeb2f998151fc144a372c41df7ac263
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44351" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

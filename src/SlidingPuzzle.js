@@ -12,6 +12,7 @@ import imgObj2 from '../src/img2/*.png';
 
 import imgObj3 from '../src/img3/*.png';
 
+console.log(window.innerWidth);
 
 const createImageArray = obj => {   
 
