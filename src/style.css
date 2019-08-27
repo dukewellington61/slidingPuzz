@@ -52,7 +52,7 @@ p {
 
 @media only screen and (min-width: 799px) {
   .puzzle-tiles {
-    height: 30vh !important;    
+    height: 38vh !important;    
   }
 }
 
@@ -78,6 +78,14 @@ p {
   white-space: nowrap;
   padding-left: 0;
   padding-right: 0;
+}
+
+@media only screen and (min-width: 799px) {
+  .btn {
+    font-size: 1em !important;
+    width: 10em !important;
+    height: 3em !important;
+  }
 }
 
 
