@@ -38,12 +38,15 @@ p {
   margin: 0 auto;
 }
 
+<<<<<<< HEAD
 @media only screen and (min-width: 598px) {
   .puzzleRows {
     width: 75vw;
   }
 }
 
+=======
+>>>>>>> 8b9b49ddbaeb2f998151fc144a372c41df7ac263
 .turn-off-number-puzzle-tile {
   font-size: 0 !important;
 }
