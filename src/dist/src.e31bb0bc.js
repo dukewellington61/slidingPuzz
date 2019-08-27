@@ -31142,10 +31142,10 @@ module.exports = "/react-4.8a390dce.png";
 module.exports = "/react-5.12186416.png";
 },{}],"img2/react-6.png":[function(require,module,exports) {
 module.exports = "/react-6.49f8d811.png";
-},{}],"img2/react-8.png":[function(require,module,exports) {
-module.exports = "/react-8.979a8efa.png";
 },{}],"img2/react-7.png":[function(require,module,exports) {
 module.exports = "/react-7.e0ec587b.png";
+},{}],"img2/react-8.png":[function(require,module,exports) {
+module.exports = "/react-8.979a8efa.png";
 },{}],"img2/*.png":[function(require,module,exports) {
 module.exports = {
   "react-1": require("./react-1.png"),
@@ -31154,13 +31154,13 @@ module.exports = {
   "react-4": require("./react-4.png"),
   "react-5": require("./react-5.png"),
   "react-6": require("./react-6.png"),
-  "react-8": require("./react-8.png"),
-  "react-7": require("./react-7.png")
+  "react-7": require("./react-7.png"),
+  "react-8": require("./react-8.png")
 };
-},{"./react-1.png":"img2/react-1.png","./react-2.png":"img2/react-2.png","./react-3.png":"img2/react-3.png","./react-4.png":"img2/react-4.png","./react-5.png":"img2/react-5.png","./react-6.png":"img2/react-6.png","./react-8.png":"img2/react-8.png","./react-7.png":"img2/react-7.png"}],"img3/stone-face-1.png":[function(require,module,exports) {
-module.exports = "/stone-face-1.cfce6d1c.png";
-},{}],"img3/stone-face-2.png":[function(require,module,exports) {
+},{"./react-1.png":"img2/react-1.png","./react-2.png":"img2/react-2.png","./react-3.png":"img2/react-3.png","./react-4.png":"img2/react-4.png","./react-5.png":"img2/react-5.png","./react-6.png":"img2/react-6.png","./react-7.png":"img2/react-7.png","./react-8.png":"img2/react-8.png"}],"img3/stone-face-2.png":[function(require,module,exports) {
 module.exports = "/stone-face-2.f471f2fe.png";
+},{}],"img3/stone-face-1.png":[function(require,module,exports) {
+module.exports = "/stone-face-1.cfce6d1c.png";
 },{}],"img3/stone-face-3.png":[function(require,module,exports) {
 module.exports = "/stone-face-3.90c28f6d.png";
 },{}],"img3/stone-face-4.png":[function(require,module,exports) {
@@ -31175,8 +31175,8 @@ module.exports = "/stone-face-7.fb10670b.png";
 module.exports = "/stone-face-8.a11a28ef.png";
 },{}],"img3/*.png":[function(require,module,exports) {
 module.exports = {
-  "stone-face-1": require("./stone-face-1.png"),
   "stone-face-2": require("./stone-face-2.png"),
+  "stone-face-1": require("./stone-face-1.png"),
   "stone-face-3": require("./stone-face-3.png"),
   "stone-face-4": require("./stone-face-4.png"),
   "stone-face-5": require("./stone-face-5.png"),
@@ -31184,7 +31184,7 @@ module.exports = {
   "stone-face-7": require("./stone-face-7.png"),
   "stone-face-8": require("./stone-face-8.png")
 };
-},{"./stone-face-1.png":"img3/stone-face-1.png","./stone-face-2.png":"img3/stone-face-2.png","./stone-face-3.png":"img3/stone-face-3.png","./stone-face-4.png":"img3/stone-face-4.png","./stone-face-5.png":"img3/stone-face-5.png","./stone-face-6.png":"img3/stone-face-6.png","./stone-face-7.png":"img3/stone-face-7.png","./stone-face-8.png":"img3/stone-face-8.png"}],"SlidingPuzzle.js":[function(require,module,exports) {
+},{"./stone-face-2.png":"img3/stone-face-2.png","./stone-face-1.png":"img3/stone-face-1.png","./stone-face-3.png":"img3/stone-face-3.png","./stone-face-4.png":"img3/stone-face-4.png","./stone-face-5.png":"img3/stone-face-5.png","./stone-face-6.png":"img3/stone-face-6.png","./stone-face-7.png":"img3/stone-face-7.png","./stone-face-8.png":"img3/stone-face-8.png"}],"SlidingPuzzle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31681,7 +31681,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37673" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39047" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

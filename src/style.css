@@ -40,8 +40,13 @@ p {
 
 @media only screen and (min-width: 598px) {
   .puzzleRows {
-    width: 75vw;
-    margin: 0 auto;
+    width: 75vw;    
+  }
+}
+
+@media only screen and (min-width: 598px) {
+  .puzzle-tiles {
+    width: 25vw !important;    
   }
 }
 
