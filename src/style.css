@@ -52,7 +52,7 @@ p {
 
 @media only screen and (min-width: 799px) {
   .puzzle-tiles {
-    height: 38vh !important;    
+    height: 28vh !important;    
   }
 }
 
