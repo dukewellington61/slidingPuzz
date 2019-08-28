@@ -289,7 +289,7 @@ export const SlidingPuzzle = props => {
 
   const toggleImageNumber = () => {    
     image == true ? setTimeout( () => setImage(false), 500) : setTimeout( () => setImage(true), 500);   
-    toggleImage();
+    fadeImage();
     if (gameHasBeenStartedBefore) removeMessageField();    
   };    
 
