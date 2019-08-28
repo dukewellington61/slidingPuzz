@@ -103,8 +103,8 @@ p {
               transform: translateY(0);
     }
     100% {
-      -webkit-transform: translateY(100px);
-              transform: translateY(100px);
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
     }
   }
   @keyframes down {
@@ -113,8 +113,8 @@ p {
               transform: translateY(0);
     }
     100% {
-      -webkit-transform: translateY(100px);
-              transform: translateY(100px);
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
     }
   }
 
@@ -129,8 +129,8 @@ p {
               transform: translateY(0);
     }
     100% {
-      -webkit-transform: translateY(-100px);
-              transform: translateY(-100px);
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
     }
   }
   @keyframes up {
@@ -139,8 +139,8 @@ p {
               transform: translateY(0);
     }
     100% {
-      -webkit-transform: translateY(-100px);
-              transform: translateY(-100px);
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
     }
   }
 
@@ -155,8 +155,8 @@ p {
               transform: translateX(0);
     }
     100% {
-      -webkit-transform: translateX(100px);
-              transform: translateX(100px);
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
     }
   }
   @keyframes right {
@@ -165,8 +165,8 @@ p {
               transform: translateX(0);
     }
     100% {
-      -webkit-transform: translateX(100px);
-              transform: translateX(100px);
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
     }
   }
 
@@ -181,8 +181,8 @@ p {
               transform: translateX(0);
     }
     100% {
-      -webkit-transform: translateX(-100px);
-              transform: translateX(-100px);
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
     }
   }
   @keyframes left {
@@ -191,8 +191,8 @@ p {
               transform: translateX(0);
     }
     100% {
-      -webkit-transform: translateX(-100px);
-              transform: translateX(-100px);
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
     }
   }
 

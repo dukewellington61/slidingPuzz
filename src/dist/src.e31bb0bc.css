@@ -52,7 +52,7 @@ p {
 
 @media only screen and (min-width: 799px) {
   .puzzle-tiles {
-    height: 30vh !important;    
+    height: 28vh !important;    
   }
 }
 
@@ -80,6 +80,14 @@ p {
   padding-right: 0;
 }
 
+@media only screen and (min-width: 799px) {
+  .btn {
+    font-size: 1em !important;
+    width: 10em !important;
+    height: 3em !important;
+  }
+}
+
 
 
 /* Effects */
@@ -95,8 +103,8 @@ p {
               transform: translateY(0);
     }
     100% {
-      -webkit-transform: translateY(100px);
-              transform: translateY(100px);
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
     }
   }
   @keyframes down {
@@ -105,8 +113,8 @@ p {
               transform: translateY(0);
     }
     100% {
-      -webkit-transform: translateY(100px);
-              transform: translateY(100px);
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
     }
   }
 
@@ -121,8 +129,8 @@ p {
               transform: translateY(0);
     }
     100% {
-      -webkit-transform: translateY(-100px);
-              transform: translateY(-100px);
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
     }
   }
   @keyframes up {
@@ -131,8 +139,8 @@ p {
               transform: translateY(0);
     }
     100% {
-      -webkit-transform: translateY(-100px);
-              transform: translateY(-100px);
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
     }
   }
 
@@ -147,8 +155,8 @@ p {
               transform: translateX(0);
     }
     100% {
-      -webkit-transform: translateX(100px);
-              transform: translateX(100px);
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
     }
   }
   @keyframes right {
@@ -157,8 +165,8 @@ p {
               transform: translateX(0);
     }
     100% {
-      -webkit-transform: translateX(100px);
-              transform: translateX(100px);
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
     }
   }
 
@@ -173,8 +181,8 @@ p {
               transform: translateX(0);
     }
     100% {
-      -webkit-transform: translateX(-100px);
-              transform: translateX(-100px);
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
     }
   }
   @keyframes left {
@@ -183,8 +191,8 @@ p {
               transform: translateX(0);
     }
     100% {
-      -webkit-transform: translateX(-100px);
-              transform: translateX(-100px);
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
     }
   }
 
