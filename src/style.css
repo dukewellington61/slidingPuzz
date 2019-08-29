@@ -2,10 +2,16 @@
 
 html {
   background-color:rgba(0, 0, 0, 0) !important;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
-  background-color:rgba(0, 0, 0, 0) !important;  
+  background-color:rgba(0, 0, 0, 0) !important; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #app {  
