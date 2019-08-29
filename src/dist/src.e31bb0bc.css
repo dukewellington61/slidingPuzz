@@ -44,6 +44,12 @@ p {
   }
 }
 
+@media only screen and (min-width: 1365px) {
+  .puzzleRows {
+    width: 60vw;  
+  }
+}
+
 @media only screen and (min-width: 598px) {
   .puzzle-tiles {
     width: 25vw !important;    
@@ -53,6 +59,13 @@ p {
 @media only screen and (min-width: 799px) {
   .puzzle-tiles {
     height: 28vh !important;    
+  }
+}
+
+@media only screen and (min-width: 1365px) {
+  .puzzle-tiles {
+    height: 25vh !important;  
+    width: 20vw !important;   
   }
 }
 
