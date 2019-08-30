@@ -31107,39 +31107,39 @@ module.exports = {
 module.exports = "/1-superhero-1.091943ff.png";
 },{}],"img1/2-superhero-2.png":[function(require,module,exports) {
 module.exports = "/2-superhero-2.1d7d48c2.png";
-},{}],"img1/3-superhero-3.png":[function(require,module,exports) {
-module.exports = "/3-superhero-3.723546a7.png";
 },{}],"img1/4-superhero-4.png":[function(require,module,exports) {
 module.exports = "/4-superhero-4.e81808c4.png";
+},{}],"img1/3-superhero-3.png":[function(require,module,exports) {
+module.exports = "/3-superhero-3.723546a7.png";
 },{}],"img1/5-superhero-5.png":[function(require,module,exports) {
 module.exports = "/5-superhero-5.75a353f6.png";
+},{}],"img1/8-superhero-8.png":[function(require,module,exports) {
+module.exports = "/8-superhero-8.55dd39d2.png";
 },{}],"img1/6-superhero-6.png":[function(require,module,exports) {
 module.exports = "/6-superhero-6.6a123465.png";
 },{}],"img1/7-superhero-7.png":[function(require,module,exports) {
 module.exports = "/7-superhero-7.20d86cd9.png";
-},{}],"img1/8-superhero-8.png":[function(require,module,exports) {
-module.exports = "/8-superhero-8.55dd39d2.png";
 },{}],"img1/*.png":[function(require,module,exports) {
 module.exports = {
   "1-superhero-1": require("./1-superhero-1.png"),
   "2-superhero-2": require("./2-superhero-2.png"),
-  "3-superhero-3": require("./3-superhero-3.png"),
   "4-superhero-4": require("./4-superhero-4.png"),
+  "3-superhero-3": require("./3-superhero-3.png"),
   "5-superhero-5": require("./5-superhero-5.png"),
+  "8-superhero-8": require("./8-superhero-8.png"),
   "6-superhero-6": require("./6-superhero-6.png"),
-  "7-superhero-7": require("./7-superhero-7.png"),
-  "8-superhero-8": require("./8-superhero-8.png")
+  "7-superhero-7": require("./7-superhero-7.png")
 };
-},{"./1-superhero-1.png":"img1/1-superhero-1.png","./2-superhero-2.png":"img1/2-superhero-2.png","./3-superhero-3.png":"img1/3-superhero-3.png","./4-superhero-4.png":"img1/4-superhero-4.png","./5-superhero-5.png":"img1/5-superhero-5.png","./6-superhero-6.png":"img1/6-superhero-6.png","./7-superhero-7.png":"img1/7-superhero-7.png","./8-superhero-8.png":"img1/8-superhero-8.png"}],"img2/react-1.png":[function(require,module,exports) {
+},{"./1-superhero-1.png":"img1/1-superhero-1.png","./2-superhero-2.png":"img1/2-superhero-2.png","./4-superhero-4.png":"img1/4-superhero-4.png","./3-superhero-3.png":"img1/3-superhero-3.png","./5-superhero-5.png":"img1/5-superhero-5.png","./8-superhero-8.png":"img1/8-superhero-8.png","./6-superhero-6.png":"img1/6-superhero-6.png","./7-superhero-7.png":"img1/7-superhero-7.png"}],"img2/react-1.png":[function(require,module,exports) {
 module.exports = "/react-1.2fe694ec.png";
 },{}],"img2/react-2.png":[function(require,module,exports) {
 module.exports = "/react-2.1d84e922.png";
-},{}],"img2/react-3.png":[function(require,module,exports) {
-module.exports = "/react-3.21ed6efc.png";
-},{}],"img2/react-4.png":[function(require,module,exports) {
-module.exports = "/react-4.8a390dce.png";
 },{}],"img2/react-5.png":[function(require,module,exports) {
 module.exports = "/react-5.12186416.png";
+},{}],"img2/react-4.png":[function(require,module,exports) {
+module.exports = "/react-4.8a390dce.png";
+},{}],"img2/react-3.png":[function(require,module,exports) {
+module.exports = "/react-3.21ed6efc.png";
 },{}],"img2/react-6.png":[function(require,module,exports) {
 module.exports = "/react-6.49f8d811.png";
 },{}],"img2/react-7.png":[function(require,module,exports) {
@@ -31150,23 +31150,23 @@ module.exports = "/react-8.979a8efa.png";
 module.exports = {
   "react-1": require("./react-1.png"),
   "react-2": require("./react-2.png"),
-  "react-3": require("./react-3.png"),
-  "react-4": require("./react-4.png"),
   "react-5": require("./react-5.png"),
+  "react-4": require("./react-4.png"),
+  "react-3": require("./react-3.png"),
   "react-6": require("./react-6.png"),
   "react-7": require("./react-7.png"),
   "react-8": require("./react-8.png")
 };
-},{"./react-1.png":"img2/react-1.png","./react-2.png":"img2/react-2.png","./react-3.png":"img2/react-3.png","./react-4.png":"img2/react-4.png","./react-5.png":"img2/react-5.png","./react-6.png":"img2/react-6.png","./react-7.png":"img2/react-7.png","./react-8.png":"img2/react-8.png"}],"img3/stone-face-1.png":[function(require,module,exports) {
-module.exports = "/stone-face-1.cfce6d1c.png";
-},{}],"img3/stone-face-2.png":[function(require,module,exports) {
+},{"./react-1.png":"img2/react-1.png","./react-2.png":"img2/react-2.png","./react-5.png":"img2/react-5.png","./react-4.png":"img2/react-4.png","./react-3.png":"img2/react-3.png","./react-6.png":"img2/react-6.png","./react-7.png":"img2/react-7.png","./react-8.png":"img2/react-8.png"}],"img3/stone-face-2.png":[function(require,module,exports) {
 module.exports = "/stone-face-2.f471f2fe.png";
 },{}],"img3/stone-face-3.png":[function(require,module,exports) {
 module.exports = "/stone-face-3.90c28f6d.png";
-},{}],"img3/stone-face-4.png":[function(require,module,exports) {
-module.exports = "/stone-face-4.42bfd93b.png";
 },{}],"img3/stone-face-5.png":[function(require,module,exports) {
 module.exports = "/stone-face-5.0a626993.png";
+},{}],"img3/stone-face-4.png":[function(require,module,exports) {
+module.exports = "/stone-face-4.42bfd93b.png";
+},{}],"img3/stone-face-1.png":[function(require,module,exports) {
+module.exports = "/stone-face-1.cfce6d1c.png";
 },{}],"img3/stone-face-6.png":[function(require,module,exports) {
 module.exports = "/stone-face-6.fb1e5b42.png";
 },{}],"img3/stone-face-7.png":[function(require,module,exports) {
@@ -31175,16 +31175,16 @@ module.exports = "/stone-face-7.fb10670b.png";
 module.exports = "/stone-face-8.a11a28ef.png";
 },{}],"img3/*.png":[function(require,module,exports) {
 module.exports = {
-  "stone-face-1": require("./stone-face-1.png"),
   "stone-face-2": require("./stone-face-2.png"),
   "stone-face-3": require("./stone-face-3.png"),
-  "stone-face-4": require("./stone-face-4.png"),
   "stone-face-5": require("./stone-face-5.png"),
+  "stone-face-4": require("./stone-face-4.png"),
+  "stone-face-1": require("./stone-face-1.png"),
   "stone-face-6": require("./stone-face-6.png"),
   "stone-face-7": require("./stone-face-7.png"),
   "stone-face-8": require("./stone-face-8.png")
 };
-},{"./stone-face-1.png":"img3/stone-face-1.png","./stone-face-2.png":"img3/stone-face-2.png","./stone-face-3.png":"img3/stone-face-3.png","./stone-face-4.png":"img3/stone-face-4.png","./stone-face-5.png":"img3/stone-face-5.png","./stone-face-6.png":"img3/stone-face-6.png","./stone-face-7.png":"img3/stone-face-7.png","./stone-face-8.png":"img3/stone-face-8.png"}],"SlidingPuzzle.js":[function(require,module,exports) {
+},{"./stone-face-2.png":"img3/stone-face-2.png","./stone-face-3.png":"img3/stone-face-3.png","./stone-face-5.png":"img3/stone-face-5.png","./stone-face-4.png":"img3/stone-face-4.png","./stone-face-1.png":"img3/stone-face-1.png","./stone-face-6.png":"img3/stone-face-6.png","./stone-face-7.png":"img3/stone-face-7.png","./stone-face-8.png":"img3/stone-face-8.png"}],"SlidingPuzzle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31681,7 +31681,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46179" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34467" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
