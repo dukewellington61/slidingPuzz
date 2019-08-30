@@ -31496,7 +31496,7 @@ const SlidingPuzzle = props => {
     fadeImage();
 
     if (!image) {
-      setWhichImage(0);
+      setWhichImage(_.default);
       setTimeout(() => setWhichImage(createImageArray(_2.default)), 500);
     }
 
@@ -31685,7 +31685,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45307" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37499" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
