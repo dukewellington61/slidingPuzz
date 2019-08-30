@@ -88,8 +88,8 @@ p {
   display : flex;
 	justify-content : space-between;
   width: 100%;
-  /* position: absolute;     */
-  height: 5vh; 
+  position: absolute;    
+  /* height: 5vh;  */
 }
 
 .btn {
