@@ -31504,7 +31504,7 @@ const SlidingPuzzle = props => {
 
   const displayImage = el => {
     if (image) return _react.default.createElement("img", {
-      src: whichImage[el - 1] || loadLoadingSpinner(),
+      src: whichImage != undefined ? whichImage[el - 1] : loadLoadingSpinner(),
       style: el != "naught" ? {
         height: '100%',
         width: '100%',
@@ -31683,7 +31683,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37793" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35195" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
