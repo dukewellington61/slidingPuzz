@@ -6,13 +6,17 @@ import './style.css';
 
 import imgObjSpinner from '../src/img4/*.gif';
 
+const loadLoadingSpinner = () => {
+  console.log(imgObjSpinner.spinner)
+  return imgObjSpinner.spinner
+};
+
 import imgObj1 from '../src/img1/*.png';
 
 import imgObj2 from '../src/img2/*.png';
 
 import imgObj3 from '../src/img3/*.png';
 
-console.log(imgObjSpinner);
 
 const createImageArray = obj => {   
 
@@ -294,11 +298,10 @@ export const SlidingPuzzle = props => {
   };    
 
   const displayImage = (el) => {   
-    if (image) return <img src = {whichImage[el-1] || imgObjSpinner.spinner} style = {el != "naught" ? {height: '100%', width: '100%', zIndex: '-1', position: 'relative'} : {display: 'none'}}/>    
+    if (image) return <img src = {whichImage[el-1] || loadLoadingSpinner()} style = {el != "naught" ? {height: '100%', width: '100%', zIndex: '-1', position: 'relative'} : {display: 'none'}}/>    
   };  
 
-  const toggleImage = () => {
-    console.log('test');
+  const toggleImage = () => {    
     setTimeout( () => setWhichImage(0), 500);    
     if (JSON.stringify(whichImage).includes('superhero')) setTimeout( () => setWhichImage(createImageArray(imgObj2)), 500);   
     if (JSON.stringify(whichImage).includes('react')) setTimeout( () => setWhichImage(createImageArray(imgObj3)), 500);  
@@ -400,7 +403,7 @@ export const SlidingPuzzle = props => {
               onClick = {gameState == true ? swapPositionTiles : undefined}
               className = {el + ' puzzle-tiles'}
               style = {el == "naught" ? naughtStyle : numberOrTileStyle()}>{el}
-              {displayImage(el)}
+              {displayImage(el)}              
               </div>) }
               
             </div>) }   
