@@ -6,11 +6,6 @@ import './style.css';
 
 import imgObjSpinner from '../src/img4/*.gif';
 
-const loadLoadingSpinner = () => {
-  console.log(imgObjSpinner.spinner)
-  return imgObjSpinner.spinner
-};
-
 import imgObj1 from '../src/img1/*.png';
 
 import imgObj2 from '../src/img2/*.png';
@@ -294,12 +289,15 @@ export const SlidingPuzzle = props => {
   const toggleImageNumber = () => {    
     image == true ? setTimeout( () => setImage(false), 500) : setTimeout( () => setImage(true), 500);   
     fadeImage();
+    if (!image) {
+      setWhichImage(0);
+      setTimeout( () => setWhichImage(createImageArray(imgObj1)), 500);
+    };
     if (gameHasBeenStartedBefore) removeMessageField();    
   };    
 
   const displayImage = (el) => {   
-    console.log('test');
-    if (image) return <img src = {whichImage != null ? whichImage[el-1] : loadLoadingSpinner()} style = {el != "naught" ? {height: '100%', width: '100%', zIndex: '-1', position: 'relative'} : {display: 'none'}}/>    
+    if (image) return <img src = {whichImage[el-1] || imgObjSpinner.spinner} style = {el != "naught" ? {height: '100%', width: '100%', zIndex: '-1', position: 'relative'} : {display: 'none'}}/>    
   };  
 
   const toggleImage = () => {    

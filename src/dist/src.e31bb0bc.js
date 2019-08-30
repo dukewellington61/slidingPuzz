@@ -31210,11 +31210,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
-const loadLoadingSpinner = () => {
-  console.log(_.default.spinner);
-  return _.default.spinner;
-};
-
 const createImageArray = obj => {
   let imgArray = Object.keys(obj).map(function (key) {
     return [obj[key]];
@@ -31499,13 +31494,19 @@ const SlidingPuzzle = props => {
   const toggleImageNumber = () => {
     image == true ? setTimeout(() => setImage(false), 500) : setTimeout(() => setImage(true), 500);
     fadeImage();
+
+    if (!image) {
+      setWhichImage(0);
+      setTimeout(() => setWhichImage(createImageArray(_2.default)), 500);
+    }
+
+    ;
     if (gameHasBeenStartedBefore) removeMessageField();
   };
 
   const displayImage = el => {
-    console.log('test');
     if (image) return _react.default.createElement("img", {
-      src: whichImage != null ? whichImage[el - 1] : loadLoadingSpinner(),
+      src: whichImage[el - 1] || _.default.spinner,
       style: el != "naught" ? {
         height: '100%',
         width: '100%',
@@ -31684,7 +31685,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38411" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45307" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
