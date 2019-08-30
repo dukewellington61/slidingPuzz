@@ -34,6 +34,10 @@ body {
   background-color:rgba(0, 0, 0, 0) !important;   
 }
 
+.puzzleBody {
+  position: relative;
+}
+
 .message-field-display-none {
   display: none !important;  
 }
@@ -88,7 +92,7 @@ p {
   display : flex;
 	justify-content : space-between;
   width: 100%;
-  position: absolute;    
+  /* position: absolute;     */
   /* height: 5vh;  */
 }
 
