@@ -298,7 +298,8 @@ export const SlidingPuzzle = props => {
   };    
 
   const displayImage = (el) => {   
-    if (image) return <img src = {whichImage != undefined ? whichImage[el-1] : loadLoadingSpinner()} style = {el != "naught" ? {height: '100%', width: '100%', zIndex: '-1', position: 'relative'} : {display: 'none'}}/>    
+    console.log('test');
+    if (image) return <img src = {whichImage != null ? whichImage[el-1] : loadLoadingSpinner()} style = {el != "naught" ? {height: '100%', width: '100%', zIndex: '-1', position: 'relative'} : {display: 'none'}}/>    
   };  
 
   const toggleImage = () => {    
