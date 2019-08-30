@@ -8,7 +8,7 @@ body {
   background-color:rgba(0, 0, 0, 0) !important;   
 }
 
-#app {  
+/* #app {  
   position: absolute;
   left: 50% !important;
   transform: translate(-50%) !important;
@@ -16,6 +16,14 @@ body {
   justify-content: center;
   align-items: center;
   background-color:rgba(0, 0, 0, 0) !important;    
+} */
+
+#app {  
+  position: absolute;
+  left: 50% !important;    
+  top: 50%;  
+  transform: translate(-50%,-50%);
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 
 
